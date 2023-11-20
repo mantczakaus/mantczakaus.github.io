@@ -12,9 +12,9 @@ Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on t
 ##### BlastDB
 Create a folder where you'll want to store the BlastDB, e.g.
 mkdir -p /scratch/go97/ontvisc/databases/blastDB
-Kraken
-Kaiju
-VirDB
+##### Kraken
+##### Kaiju
+##### VirDB
 #### Download the pipeline and singularity images (if you are planning to use a queue that does not have network connection)
 
 #### Run Tower Agent
