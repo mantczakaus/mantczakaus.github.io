@@ -1,14 +1,14 @@
 subitems:
   - title: About
     url: /index
-  - title: Standard example page
-    url: /example_page
-  - title: Workflow How-to Guide example pages
+  - title: How to set up the ONTvisc pipeline on an HPC and Nextflow Tower
     subitems:
-      - title: Example workflow guide page
+      - title: Queensland University of Technology - Lyra
         url: /example_bioinformatics_workflow_page
-      - title: Example workflow documentation page
-        url: /example_workflow_documentation_page
+      - title: National Computational Infrastructure - Gadi
+        url: /nci_gadi
+      - title: Pawsey - Setonix
+        url: /example_bioinformatics_workflow_page
   - title: Contributors
     url: /contributors
   
