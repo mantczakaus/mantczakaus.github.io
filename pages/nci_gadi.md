@@ -11,7 +11,7 @@ affiliations:
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below detailled instructions on how to do it on Gadi. Change links / versions if necessary.
 ##### BlastDB
 Create a folder where you'll want to store the BlastDB, e.g.
-'''
+```bash
 blastdb_fold=/scratch/go97/ontvisc/databases/test/blastDB
 mkdir -p $blastdb_fold
 cd $blastdb_fold
@@ -29,7 +29,7 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 qsub download_blastdb.pbs
-'''
+```
 ##### Kraken
 ##### Kaiju
 ##### VirDB
