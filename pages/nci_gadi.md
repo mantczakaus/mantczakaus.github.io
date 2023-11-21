@@ -1,17 +1,17 @@
 ---
-title:
-contributors: 
-description: 
-affiliations: 
+title: How to configure ONTvisc
+contributors: Magdalena Antczak
+description: This guide includes instructions on how to configure ONTvisc on the following HPCs: Gadi, Setonix and Lyra
+affiliations: QCIF, QUT
 ---
 ## Access to Biocommons Tower
 ## Access to HPC
 
 ## Create Personal Access Token
-Step to be done in: Nextflow Tower
-Environments requiring this step: Lyra, Gadi and Setonix
+Step to be done in: Nextflow Tower\\
+Environments requiring this step: Lyra, Gadi and Setonix\\
 You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile. 
-![bla](./images/token.png)
+[](./images/token.png)\\
 More information on the authentication can be found in the Nextflow Tower documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://docs.google.com/document/d/1DZ-dsaDjiM8bVo4VifPAXP7Nah7V7mHlluijb3KYj8E/edit#heading=h.ar0302xrqom4).
 
 ### Add Credentials for Tower Agent
