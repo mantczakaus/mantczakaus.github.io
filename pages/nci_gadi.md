@@ -11,7 +11,7 @@ affiliations:
 Step to be done in: Nextflow Tower
 Environments requiring this step: Lyra, Gadi and Setonix
 You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile. 
-<img></img>
+[](./images/workflow_diagram_simple.png)
 More information on the authentication can be found in the Nextflow Tower documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://docs.google.com/document/d/1DZ-dsaDjiM8bVo4VifPAXP7Nah7V7mHlluijb3KYj8E/edit#heading=h.ar0302xrqom4).
 
 ### Add Credentials for Tower Agent
