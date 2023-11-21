@@ -4,7 +4,23 @@ contributors:
 description: 
 affiliations: 
 ---
+## Access to Biocommons Tower
+## Access to HPC
 
+## Create Personal Access Token
+Step to be done in: Nextflow Tower
+Environments requiring this step: Lyra, Gadi and Setonix
+You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile. More information on the authentication can be found in the Nextflow Tower documentation: [Authentication section (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token section (Australian BioCommons)](https://docs.google.com/document/d/1DZ-dsaDjiM8bVo4VifPAXP7Nah7V7mHlluijb3KYj8E/edit#heading=h.ar0302xrqom4).
+
+### Add Credentials for Tower Agent
+### Add Credentials for GitHub
+### Add a Compute Environment
+### Add a pipeline
+
+
+
+## Useful links
+## Submit scripts to PBS
 
 ## Directly on the HPC
 ### Download databases
@@ -41,20 +57,4 @@ qsub download_blastdb.pbs
 #### VirDB
 ### Download the pipeline and singularity images (if you are planning to use a queue that does not have network connection)
 
-<gadi_header> Run Tower Agent </gadi_header>
-
-## In GitHub
-
-
-## In Nextflow Tower
-### Create a Personal Access Token
-### Add Credentials for Tower Agent
-### Add Credentials for GitHub
-### Add a Compute Environment
-### Add a pipeline
-
-
-
-## Useful links
-## Submit scripts to PBS
-
+## Run Tower Agent
