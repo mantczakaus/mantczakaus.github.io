@@ -41,7 +41,7 @@ qsub download_blastdb.pbs
 #### VirDB
 ### Download the pipeline and singularity images (if you are planning to use a queue that does not have network connection)
 
-### Run Tower Agent
+<gadi_header> Run Tower Agent </gadi_header>
 
 ## In GitHub
 
