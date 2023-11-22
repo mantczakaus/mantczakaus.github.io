@@ -9,12 +9,16 @@ description:
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Nextflow Tower)
 You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile in Nextflow Tower.<br> 
-![Token](./images/token.png)
-  <br>
+![Token](./images/token.png) <br>
 More information on the authentication can be found in the Nextflow Tower documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/tower/user-guide/create_personal_token).
 
 ## Add Credentials for Tower Agent
 #### Gadi and Setonix (Nextflow Tower)
+Tower Agent needs to be run continuously to be able to pick up jobs from Nextflow Tower and execute them on the HPC. It will also display the output log live and reports after its completed. To run Tower Agent on HPC you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
+If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled sharing the agent. If that's not the case, you'll need to create the credentials yourself. Either way go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not click Add Credentials.<br> 
+![Organisation Credentials](./images/credentials_org.png) <br>
+You can also created credentials to work in your personal workspace.
+![Personal Credentials](./images/credentials_personal.org.png) <br>
 #### Lyra
 You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
 
