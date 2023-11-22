@@ -19,6 +19,21 @@ More information on the authentication can be found in the Nextflow Tower docume
 </details>
 
 ### Add Credentials for Tower Agent
+<details>
+  <summary>
+    Gadi and Setonix (Nextflow Tower)
+  </summary>
+</details>
+
+<details>
+  <summary>
+    Lyra
+  </summary>
+  You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
+</details>
+
+
+
 ### Add Credentials for GitHub
 ### Add a Compute Environment
 ### Add a pipeline
