@@ -19,6 +19,7 @@ If you are part of an organisational workspace, someone might have already creat
 ![Organisation Credentials](./images/credentials_org.png) <br>
 You can also created credentials to work in your personal workspace.
 ![Personal Credentials](./images/credentials_personal.png) <br>
+More information on adding the credentials can be found in Nextflow Tower documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials).
 #### Lyra
 You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
 
