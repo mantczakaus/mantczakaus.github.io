@@ -1,10 +1,5 @@
 subitems:
   - title: About
     url: /index
-  - title: How to set up ONTvisc pipeline
-    url: /nci_gadi
-  - title: How to run ONTvisc pipeline
-    url: /nci_gadi
   - title: Contributors
     url: /contributors
-  
