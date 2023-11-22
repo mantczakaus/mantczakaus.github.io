@@ -18,7 +18,7 @@ Tower Agent needs to be run continuously to be able to pick up jobs from Nextflo
 If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled sharing the agent. If that's not the case, you'll need to create the credentials yourself. Either way go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not click Add Credentials.<br> 
 ![Organisation Credentials](./images/credentials_org.png) <br>
 You can also created credentials to work in your personal workspace.
-![Personal Credentials](./images/credentials_personal.org.png) <br>
+![Personal Credentials](./images/credentials_personal.png) <br>
 #### Lyra
 You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
 
