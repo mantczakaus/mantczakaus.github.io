@@ -1,14 +1,10 @@
 subitems:
   - title: About
     url: /index
-  - title: How to set up the ONTvisc pipeline on an HPC and Nextflow Tower
-    subitems:
-      - title: Queensland University of Technology - Lyra
-        url: /example_bioinformatics_workflow_page
-      - title: National Computational Infrastructure - Gadi
-        url: /nci_gadi
-      - title: Pawsey - Setonix
-        url: /example_bioinformatics_workflow_page
+  - title: How to set up ONTvisc pipeline
+    url: /nci_gadi
+  - title: How to run ONTvisc pipeline
+    url: /nci_gadi
   - title: Contributors
     url: /contributors
   
