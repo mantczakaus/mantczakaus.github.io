@@ -1,7 +1,7 @@
 ---
-title: How to configure ONTvisc
-contributors: [Magdalena Antczak]
-description: This guide includes instructions on how to configure ONTvisc on the following HPC Gadi, Setonix and Lyra
+title:
+contributors:
+description:
 ---
 ## Access to Biocommons Tower
 ## Access to HPC
