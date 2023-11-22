@@ -10,11 +10,12 @@ affiliations: QCIF, QUT
 ## Create Personal Access Token
 <details>
   <summary>
-    Platform: Lyra, Gadi and Setonix (Nextflow Tower)
+    Lyra, Gadi and Setonix (Nextflow Tower)
   </summary>
 <ol>
-You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile in Nextflow Tower. 
-![Token](./images/token.png)<br>
+You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile in Nextflow Tower.<br> 
+![Token](./images/token.png)
+  <br>
 More information on the authentication can be found in the Nextflow Tower documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://docs.google.com/document/d/1DZ-dsaDjiM8bVo4VifPAXP7Nah7V7mHlluijb3KYj8E/edit#heading=h.ar0302xrqom4).
 </ol>
 </details>
