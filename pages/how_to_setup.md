@@ -6,11 +6,13 @@ description:
 ## Access to Biocommons Tower
 ## Access to HPC
 
+
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Nextflow Tower)
 You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile in Nextflow Tower.<br> 
 ![Token](./images/token.png) <br>
 More information on the authentication can be found in the Nextflow Tower documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/tower/user-guide/create_personal_token).
+
 
 ## Add Credentials for Tower Agent
 #### Gadi and Setonix (Nextflow Tower)
@@ -24,8 +26,19 @@ More information on adding the credentials can be found in Nextflow Tower docume
 You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
 
 
+### Add Personal Access Token in GitHub
+#### Gadi and Setonix (Nextflow Tower)
+GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens] (https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
+#### Lyra
+Not applicable.
+
 
 ### Add Credentials for GitHub
+#### Gadi and Setonix (Nextflow Tower)
+
+#### Lyra
+No need to create 
+
 ### Add a Compute Environment
 ### Add a pipeline
 
