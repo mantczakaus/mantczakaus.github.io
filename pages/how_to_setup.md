@@ -28,7 +28,7 @@ You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does 
 
 ### Add Personal Access Token in GitHub
 #### Gadi and Setonix (Nextflow Tower)
-GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens] (https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
+GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
 #### Lyra
 Not applicable.
 
@@ -37,7 +37,7 @@ Not applicable.
 #### Gadi and Setonix (Nextflow Tower)
 
 #### Lyra
-No need to create 
+Not applicable.
 
 ### Add a Compute Environment
 ### Add a pipeline
