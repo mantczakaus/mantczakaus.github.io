@@ -27,7 +27,7 @@ More information on adding the credentials can be found in Nextflow Tower docume
 You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
 
 
-### Add Personal Access Token in GitHub
+## Add Personal Access Token in GitHub
 #### Gadi and Setonix (Nextflow Tower)
 GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 {% include callout.html type="note" content="You will need a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) first." %}
@@ -36,25 +36,25 @@ GitHub is very restrictive about the number of times you can make [API requests]
 Not applicable.
 
 
-### Add Credentials for GitHub
+## Add Credentials for GitHub
 #### Gadi and Setonix (Nextflow Tower)
 Credentials for GitHub are created in a similar way to credentials for Tower Agent - you need to navigate to Credentials tab and you have an option to add them at the organisation or personal level. However, instead of choosing Tower Agent as Provider, you'll need to choose GitHub. Fill in the rest according to the help text provided under each of the fields.<br> 
 ![GitHub Credentials](./images/credentials_github.png)
 #### Lyra
 Not applicable.
 
-### Launch Tower Agent
+## Launch Tower Agent
 #### Gadi (HPC)
 #### Setonix (HPC)
 #### Lyra
 Not applicable.
 
-### Add a Compute Environment
+## Add a Compute Environment
 #### Gadi and Setonix (Nextflow Tower)
 #### Lyra
 Not applicable.
 
-### Add a pipeline
+## Add a pipeline
 #### Gadi and Setonix (Nextflow Tower)
 #### Lyra
 Not applicable.
@@ -63,20 +63,22 @@ Not applicable.
 ## Useful links
 ## Submit scripts to PBS
 
-## Databases
-Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC and how to download them if they are not accessible.
-### Where to find
-#### BLAST nucleotide database (NT)
+### Check if databases are accessible on your HPC
+Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
 ##### Gadi
-##### Setonix
-##### Lyra
-### How to download
-#### BLAST nucleotide database (NT)
+ABLeS communities have access to the Australian BioCommons Tools and Workflows project, in project allocation if89.
+
+and how to download them if they are not accessible.
+### BLAST nucleotide database (NT)
+##### Gadi
 The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database.  
 ```bash
 cat <<EOF > download_blastdb.sh
 #!/bin/bash -l
-<DIRECTIVES SPECIFIC TO THE HPC>
+#PBS -N d_blastdb
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+#PBS -q copyq
 
 cd <FULL PATH TO WHERE YOUR BLAST DB WILL BE STORED>
 curl -sO ftp://ftp.ncbi.nlm.nih.gov/blast/temp/update_blastdb.pl
@@ -87,14 +89,6 @@ tar -xzf taxdb.tar.gz
 EOF
 ```
 {% include callout.html type="note" content="Make sure to create a folder(s) where you will store the database first and then change the paths before you execute the command. You also need to copy directives specific to your HPC (below)." %}
-##### Gadi
-Replace `<DIRECTIVES SPECIFIC TO THE HPC>` with the following lines:
-```bash
-#PBS -N d_blastdb
-#PBS -l mem=60gb
-#PBS -l walltime=08:00:00
-#PBS -q copyq
-```
 ##### Setonix
 ##### Lyra
 
