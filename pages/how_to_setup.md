@@ -63,20 +63,22 @@ Not applicable.
 ## Useful links
 ## Submit scripts to PBS
 
-### Download databases
+## Databases
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC and how to download them if they are not accessible.
-{% include callout.html type="note" content="If you need to download the databases yourself, make sure that you create a folder(s) where you will store all the databases first and then change the paths in the scripts below." %}
+### Where to find
 #### BLAST nucleotide database (NT)
-The following script will:
-2) Create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database
-3) Submit the ```download_blastdb.sh``` script to PBS
-
+##### Gadi
+##### Setonix
+##### Lyra
+### How to download
+#### BLAST nucleotide database (NT)
+The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database.  
 ```bash
 cat <<EOF > download_blastdb.sh
 #!/bin/bash -l
-<@@@ HERE YOU WILL NEED DIRECTIVES SPECIFIC TO THE HPC @@@>
+<DIRECTIVES SPECIFIC TO THE HPC>
 
-cd <@@@ HERE IS THE FULL PATH TO WHERE YOUR BLAST DB WILL BE STORED @@@>
+cd <FULL PATH TO WHERE YOUR BLAST DB WILL BE STORED>
 curl -sO ftp://ftp.ncbi.nlm.nih.gov/blast/temp/update_blastdb.pl
 chmod +x update_blastdb.pl
 perl update_blastdb.pl --decompress nt
@@ -84,12 +86,19 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 ```
-
-qsub download_blastdb.sh
+{% include callout.html type="note" content="Make sure to create a folder(s) where you will store the database first and then change the paths before you execute the command. You also need to copy directives specific to your HPC (below)." %}
+##### Gadi
+Replace `<DIRECTIVES SPECIFIC TO THE HPC>` with the following lines:
+```bash
 #PBS -N d_blastdb
 #PBS -l mem=60gb
 #PBS -l walltime=08:00:00
 #PBS -q copyq
+```
+##### Setonix
+##### Lyra
+
+
 #### Kraken
 #### Kaiju
 #### VirDB
