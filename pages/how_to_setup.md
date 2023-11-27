@@ -19,7 +19,7 @@ More information on the authentication can be found in the Nextflow Tower docume
 Tower Agent needs to be run continuously to be able to pick up jobs from Nextflow Tower and execute them on the HPC. It will also display the output log live and reports after its completed. To run Tower Agent on HPC you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
 If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled sharing the agent. If that's not the case, you'll need to create the credentials yourself. Either way go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not click Add Credentials.<br> 
 ![Organisation Credentials](./images/credentials_org.png) <br>
-You can also created credentials to work in your personal workspace.
+You can also created credentials to work in your personal workspace.<br>
 ![Personal Credentials](./images/credentials_personal.png) <br>
 {% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you will be able to use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
 More information on adding the credentials can be found in Nextflow Tower documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials).
@@ -38,8 +38,8 @@ Not applicable.
 
 ### Add Credentials for GitHub
 #### Gadi and Setonix (Nextflow Tower)
-Credentials for GitHub are created in a similar way to credentials for Tower Agent - you need to navigate to Credentials tab and you have an option to add them at the organisation or personal level. However, instead of choosing Tower Agent as Provider, you'll need to choose GitHub. Fill in the rest according to the help text provided under each of the fields. 
-![Personal Credentials](./images/credentials_personal.png) <br>
+Credentials for GitHub are created in a similar way to credentials for Tower Agent - you need to navigate to Credentials tab and you have an option to add them at the organisation or personal level. However, instead of choosing Tower Agent as Provider, you'll need to choose GitHub. Fill in the rest according to the help text provided under each of the fields.<br> 
+![GitHub Credentials](./images/credentials_github.png)
 #### Lyra
 Not applicable.
 
