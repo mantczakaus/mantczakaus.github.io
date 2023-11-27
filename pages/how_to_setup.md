@@ -64,6 +64,7 @@ Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on t
 #### Gadi
 If the access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you will have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for the databases you need. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Setonix
+Check if databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage#PawseyFilesystemsandtheirUsage-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Lyra
 
 ## Download databases if they are not provided
