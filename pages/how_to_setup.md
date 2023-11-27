@@ -86,15 +86,38 @@ EOF
 After the script `download_blastdb.sh` is created, submit it to the scheduler using. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
 ##### Directives specific to PBS on Gadi
+```bash
 #PBS -N d_blastdb
 #PBS -l mem=60gb
 #PBS -l walltime=08:00:00
 #PBS -q copyq
+```
 ##### Command to submit the script to PBS
-qsub 
-
+```bash
+qsub download_blastdb.sh
+```
 #### Setonix
+##### Directives specific to Slurm on Setonix
+```bash
+#SBATCH --job-name=d_blastdb
+#SBATCH --mem=60gb
+#SBATCH --time=08:00:00
+```
+##### Command to submit the script to Slurm
+```bash
+sbatch download_blastdb.sh
+```
 #### Lyra
+##### Directives specific to PBS on Lyra
+```bash
+#PBS -N d_blastdb
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+```
+##### Command to submit the script to PBS
+```bash
+qsub download_blastdb.sh
+```
 
 
 #### Kraken
