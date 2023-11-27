@@ -43,9 +43,21 @@ Credentials for GitHub are created in a similar way to credentials for Tower Age
 #### Lyra
 Not applicable.
 
-### Add a Compute Environment
-### Add a pipeline
+### Launch Tower Agent
+#### Gadi (HPC)
+#### Setonix (HPC)
+#### Lyra
+Not applicable.
 
+### Add a Compute Environment
+#### Gadi and Setonix (Nextflow Tower)
+#### Lyra
+Not applicable.
+
+### Add a pipeline
+#### Gadi and Setonix (Nextflow Tower)
+#### Lyra
+Not applicable.
 
 
 ## Useful links
