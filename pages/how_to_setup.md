@@ -63,22 +63,21 @@ Not applicable.
 ## Useful links
 ## Submit scripts to PBS
 
-### Check if databases are accessible on your HPC
+## Check if required databases are provided on your HPC
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
-##### Gadi
-ABLeS communities have access to the Australian BioCommons Tools and Workflows project, in project allocation if89.
+#### Gadi
+If the access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you will have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for the databases you need. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
+#### Setonix
+#### Lyra
 
-and how to download them if they are not accessible.
-### BLAST nucleotide database (NT)
-##### Gadi
+## Download databases if they are not provided
+### BLAST nucleotide sequence database (NT)
 The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database.  
+{% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command." %}
 ```bash
 cat <<EOF > download_blastdb.sh
 #!/bin/bash -l
-#PBS -N d_blastdb
-#PBS -l mem=60gb
-#PBS -l walltime=08:00:00
-#PBS -q copyq
+<DIRECTIVES SPECIFIC TO THE SCHEDULER ON YOUR HPC>
 
 cd <FULL PATH TO WHERE YOUR BLAST DB WILL BE STORED>
 curl -sO ftp://ftp.ncbi.nlm.nih.gov/blast/temp/update_blastdb.pl
@@ -88,9 +87,16 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 ```
-{% include callout.html type="note" content="Make sure to create a folder(s) where you will store the database first and then change the paths before you execute the command. You also need to copy directives specific to your HPC (below)." %}
-##### Setonix
-##### Lyra
+#### Gadi
+##### DIRECTIVES SPECIFIC TO PBS ON GADI
+#PBS -N d_blastdb
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+#PBS -q copyq
+##### COMMAND TO SUBMIT
+
+#### Setonix
+#### Lyra
 
 
 #### Kraken
