@@ -63,36 +63,33 @@ Not applicable.
 ## Useful links
 ## Submit scripts to PBS
 
-## Directly on the HPC
 ### Download databases
-Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below commands that will download the respective databases on Gadi. Change paths to folders / links / versions if necessary. Make sure you create a folder where you will store all the databases first and update the scripts when necessary.
-#### NT - BlastDB
+Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC and how to download them if they are not accessible.
+{% include callout.html type="note" content="If you need to download the databases yourself, make sure that you create a folder(s) where you will store all the databases first and then change the paths in the scripts below." %}
+#### BLAST nucleotide database (NT)
 The following script will:
-1) Create a folder ```blastDB``` in the folder ```/scratch/go97/ontvisc/databases```
-2) Create a script ```download_blastdb.pbs``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database
-3) Submit the ```download_blastdb.pbs``` script to PBS
-Create a folder where you'll want to store the BlastDB, e.g.
+2) Create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database
+3) Submit the ```download_blastdb.sh``` script to PBS
+
 ```bash
-blastdb_fold=/scratch/go97/ontvisc/databases/blastDB
-mkdir -p $blastdb_fold
-cd $blastdb_fold
-
-cat <<EOF > download_blastdb.pbs
+cat <<EOF > download_blastdb.sh
 #!/bin/bash -l
-#PBS -N d_blastdb
-#PBS -l mem=60gb
-#PBS -l walltime=08:00:00
-#PBS -q copyq
+<@@@ HERE YOU WILL NEED DIRECTIVES SPECIFIC TO THE HPC @@@>
 
+cd <@@@ HERE IS THE FULL PATH TO WHERE YOUR BLAST DB WILL BE STORED @@@>
 curl -sO ftp://ftp.ncbi.nlm.nih.gov/blast/temp/update_blastdb.pl
 chmod +x update_blastdb.pl
 perl update_blastdb.pl --decompress nt
 perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
-
-qsub download_blastdb.pbs
 ```
+
+qsub download_blastdb.sh
+#PBS -N d_blastdb
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+#PBS -q copyq
 #### Kraken
 #### Kaiju
 #### VirDB
