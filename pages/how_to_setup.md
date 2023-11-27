@@ -59,10 +59,6 @@ Not applicable.
 #### Lyra
 Not applicable.
 
-
-## Useful links
-## Submit scripts to PBS
-
 ## Check if required databases are provided on your HPC
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
 #### Gadi
@@ -87,13 +83,15 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 ```
+After the script `download_blastdb.sh` is created, submit it to the scheduler using. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
-##### DIRECTIVES SPECIFIC TO PBS ON GADI
+##### Directives specific to PBS on Gadi
 #PBS -N d_blastdb
 #PBS -l mem=60gb
 #PBS -l walltime=08:00:00
 #PBS -q copyq
-##### COMMAND TO SUBMIT
+##### Command to submit the script to PBS
+qsub 
 
 #### Setonix
 #### Lyra
@@ -102,6 +100,6 @@ EOF
 #### Kraken
 #### Kaiju
 #### VirDB
-### Download the pipeline and singularity images (if you are planning to use a queue that does not have network connection)
 
-## Run Tower Agent
+## Useful links
+## Submit scripts to PBS
