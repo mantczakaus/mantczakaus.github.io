@@ -38,12 +38,8 @@ Not applicable.
 
 ### Add Credentials for GitHub
 #### Gadi and Setonix (Nextflow Tower)
-Just like in the case of creating credentials for the Tower Agent, you have an option or using organisation or personal GitHub credentials. <br> 
-![Organisation Credentials](./images/credentials_org.png) <br>
-You can also create credentials to work in your personal workspace.
+Credentials for GitHub are created in a similar way to credentials for Tower Agent - you need to navigate to Credentials tab and you have an option to add them at the organisation or personal level. However, instead of choosing Tower Agent as Provider, you'll need to choose GitHub. Fill in the rest according to the help text provided under each of the fields. 
 ![Personal Credentials](./images/credentials_personal.png) <br>
-{% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you will be able to use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
-More information on adding the credentials can be found in Nextflow Tower documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials).
 #### Lyra
 Not applicable.
 
