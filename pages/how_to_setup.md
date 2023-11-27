@@ -1,8 +1,8 @@
 ---
-title:
-contributors:
-description:
+title: How to set up ONTvisc pipeline
+toc: false
 ---
+
 ## Access to Biocommons Tower
 ## Access to HPC
 
@@ -29,15 +29,21 @@ You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does 
 
 ### Add Personal Access Token in GitHub
 #### Gadi and Setonix (Nextflow Tower)
-GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). 
+GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 {% include callout.html type="note" content="You will need a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) first." %}
+{% include callout.html type="note" content="Copy/securely store the access token from GitHub. You will need it to use it in Nextflow Tower in the next step." %}
 #### Lyra
 Not applicable.
 
 
 ### Add Credentials for GitHub
 #### Gadi and Setonix (Nextflow Tower)
-Just like in the case of credentials for the 
+Just like in the case of creating credentials for the Tower Agent, you have an option or using organisation or personal GitHub credentials. <br> 
+![Organisation Credentials](./images/credentials_org.png) <br>
+You can also create credentials to work in your personal workspace.
+![Personal Credentials](./images/credentials_personal.png) <br>
+{% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you will be able to use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
+More information on adding the credentials can be found in Nextflow Tower documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials).
 #### Lyra
 Not applicable.
 
