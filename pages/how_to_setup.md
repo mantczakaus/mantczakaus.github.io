@@ -3,9 +3,13 @@ title: How to set up ONTvisc pipeline
 toc: false
 ---
 
-## Access to Biocommons Tower
 ## Access to HPC
+#### Gadi
+#### Setonix
+#### Lyra
 
+## Access to Biocommons Tower
+#### Lyra, Gadi and Setonix (Nextflow Tower)
 
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Nextflow Tower)
@@ -43,6 +47,18 @@ Credentials for GitHub are created in a similar way to credentials for Tower Age
 #### Lyra
 Not applicable.
 
+## Install Nextflow and add default configuration
+#### Gadi
+Nextflow is available as one of the modules on Gadi, so there is no need for installation. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
+#### Setonix
+Nextflow is available as one of the modules on Setonix, so there is no need for installation. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
+#### Lyra (HPC)
+Follow the following steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):
+<ol>
+  <li>[Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)</li>
+  <li>[Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)</li>
+</ol>
+
 ## Launch Tower Agent
 #### Gadi (HPC)
 #### Setonix (HPC)
@@ -60,7 +76,7 @@ Not applicable.
 Not applicable.
 
 ## Check if required databases are provided on your HPC
-Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/maelyg/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
+Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
 #### Gadi
 If the access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you will have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for the databases you need. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Setonix
@@ -222,6 +238,53 @@ qsub download_kaiju.sh
 ```
 
 ### VirDB
+The following command will create a script ```download_virdb.sh``` which will download and decompress [the collection of viral sequences](https://zenodo.org/records/10183620).
+{% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command. Change the version as well if necessary." %}
+```bash
+cat <<EOF > download_virdb.sh
+#!/bin/bash -l
+<DIRECTIVES SPECIFIC TO THE SCHEDULER ON YOUR HPC>
+
+cd <FULL PATH TO WHERE YOUR DATABASE WILL BE STORED>
+https://zenodo.org/records/10183620/files/VirDB_20230913.tar.gz
+tar -zxvf VirDB_20230913.tar.gz
+EOF
+```
+After the script `download_virdb.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+#### Gadi
+##### Directives specific to PBS on Gadi
+```bash
+#PBS -N d_virdb
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+#PBS -q copyq
+```
+##### Command to submit the script to PBS
+```bash
+qsub download_virdb.sh
+```
+#### Setonix
+##### Directives specific to Slurm on Setonix
+```bash
+#SBATCH --job-name=d_virdb
+#SBATCH --mem=60gb
+#SBATCH --time=08:00:00
+```
+##### Command to submit the script to Slurm
+```bash
+sbatch download_virdb.sh
+```
+#### Lyra
+##### Directives specific to PBS on Lyra
+```bash
+#PBS -N d_virdb
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+```
+##### Command to submit the script to PBS
+```bash
+qsub download_virdb.sh
+```
 
 ## Useful links
 ## Submit scripts to PBS
