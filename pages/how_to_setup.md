@@ -122,7 +122,7 @@ sbatch download_blastdb.sh
 qsub download_blastdb.sh
 ```
 
-#### Kraken
+### Kraken
 The following command will create a script ```download_kraken.sh``` which will download and decompress the Kraken2 database PlusPFP (version from 10/09/2023) that contains Refeq archaea, bacteria, viral, plasmid, human, UniVec_Core plus Refeq protozoa, fungi & plant.  
 {% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command. Change the version as well if necessary." %}
 ```bash
@@ -172,8 +172,8 @@ sbatch download_kraken.sh
 qsub download_kraken.sh
 ```
 
-#### Kaiju
-#### VirDB
+### Kaiju
+### VirDB
 
 ## Useful links
 ## Submit scripts to PBS
