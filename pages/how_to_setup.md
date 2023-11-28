@@ -66,10 +66,12 @@ If the access to Gadi was granted to you through the [ABLeS initiative](https://
 #### Setonix
 Check if databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage#PawseyFilesystemsandtheirUsage-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Lyra
+{% include callout.html type="warning" content="COLLECT INFO AND FILL THIS IN." %}
+
 
 ## Download databases if they are not provided
 ### BLAST nucleotide sequence database (NT)
-The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary components of the NT database.  
+The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary latest components of the NT database.  
 {% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command." %}
 ```bash
 cat <<EOF > download_blastdb.sh
@@ -84,7 +86,7 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 ```
-After the script `download_blastdb.sh` is created, submit it to the scheduler using. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+After the script `download_blastdb.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
 ##### Directives specific to PBS on Gadi
 ```bash
@@ -119,7 +121,6 @@ sbatch download_blastdb.sh
 ```bash
 qsub download_blastdb.sh
 ```
-
 
 #### Kraken
 #### Kaiju
