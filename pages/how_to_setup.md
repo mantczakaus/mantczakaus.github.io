@@ -114,6 +114,9 @@ Select the Tower Agent credentials that you created in one of the steps before.
 ### Work directory
 #### Gadi and Setonix
 Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when pipeline is created and executed.
+### Launch directory
+#### Gadi and Setonix
+After the pipeline is launched from the Nextflow Tower, a script submission to the scheduler will be created and submitted on your behalf on the HPC. The `Launch directory` is where all those scripts, configuration files and logs will be stored. You can specify it or leave empty (it will be populated with `Work directory` in the latter case).
 ### Head queue name
 #### Gadi 
 Leave empty.
