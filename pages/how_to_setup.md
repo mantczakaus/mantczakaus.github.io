@@ -99,6 +99,7 @@ sbatch run_toweragent.sh
 
 ## Add a Compute Environment
 You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix.
+{% include callout.html type="note" content="A few issues were revealed when the ONTvisc pipeline was tested using Nextflow Tower on Gadi and Setonix. Firstly, queue names were not used correctly on Gadi when filled in from the `Head queue name` and `Work queue name`. Secondly, values for the environment variables were not assigned correctly in Setonix when populated in the `Environment variables` section. Finally, version 23.04.3 of Nextflow causes problems when tower.yml file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply workarounds specified below." %}
 ### Name
 Provide a name according to the given instructions.
 ### Platform
@@ -114,12 +115,12 @@ Select the Tower Agent credentials that you created in one of the steps before.
 Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when pipeline is created and executed.
 ### Head queue name
 #### Gadi 
-This doesn't work for now so leave this empty. As a workaround you can specify the head queue name in the `Advanced options: Head job submit options` section.
+Leave empty.
 #### Setonix
 `work`
 ### Compute queue name
 #### Gadi
-This doesn't work for now so leave this empty. As a workaround you can specify the compute queue name when creating the pipeline.
+Leave empty.
 #### Setonix
 `work`
 ### Staging options: Pre-run script
@@ -134,7 +135,6 @@ module load nextflow/23.04.3
 module load singularity/3.11.4-slurm
 NXF_OPTS='-Xms1g -Xmx4g'
 ```
-`NXF_OPTS` is added here instead of in the environmental variables as this functionality doesn't work for now on Setonix.
 ### Environment variables
 #### Gadi
 #### Setonix
