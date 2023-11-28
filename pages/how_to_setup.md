@@ -98,7 +98,8 @@ sbatch run_toweragent.sh
 ```
 
 ## Add a Compute Environment
-You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix.
+You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisation workspace, just click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to Compute Environments tab.<br>
+![Workspaces](./images/compute_env_whereto.png) <br>
 {% include callout.html type="note" content="A few issues were revealed when the ONTvisc pipeline was tested using Nextflow Tower on Gadi and Setonix. Firstly, queue names were not used correctly on Gadi when filled in from the `Head queue name` and `Work queue name`. Secondly, values for the environment variables were not assigned correctly in Setonix when populated in the `Environment variables` section. Finally, version 23.04.3 of Nextflow causes problems when tower.yml file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply workarounds specified below." %}
 ### Name
 Provide a name according to the given instructions.
@@ -144,13 +145,53 @@ Add the environment variables like in the screenshots below.<br>
 Leave empty.
 ### Advanced options: Head job submit options
 #### Gadi
-Copy and paste the following text. Replace the <project-id> with the id of the project you were granted on Gadi.
+Copy and paste the following text. Replace the <project-id> with the id of the project you were granted on Gadi.<br>
 `-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id> -q copyq`
 #### Setonix
 `--mem=32G --cpus-per-task=8 --time=24:00:00`
 
 ## Add a pipeline
-#### Gadi and Setonix (Nextflow Tower)
+Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://help.tower.nf/23.2/launch/launchpad/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace, just click on your user name in the top left corner of the page, select the corresponding workspace but then navigate to Launchpad tab.
+### Name
+Provide a name according to the given instructions.
+### Compute environment
+Select the Compute Environment you just created.
+### Pipeline to launch
+`https://github.com/eresearchqut/ontvisc`
+### Revision number
+Choose `main` or any other revision you want to execute.
+### Work directory
+It should be pre-populated from the Compute Environment.
+### Config profiles
+Select `singulariy`.
+### Advanced options: Nextflow config file
+#### Gadi
+```
+process {
+   beforeScript = 'module load singularity'
+}
+```
+#### Setonix
+```
+process {
+   beforeScript = 'module load singularity/3.11.4-slurm'
+}
+singularity {
+    cacheDir = '/scratch/pawsey0939/ontvisc/.singularity/NXF_SINGULARITY_CACHEDIR'
+}
+```
+### 
+#### Gadi
+#### Setonix
+### 
+#### Gadi
+#### Setonix
+### 
+#### Gadi
+#### Setonix
+### 
+#### Gadi
+#### Setonix
 
 ## Check if required databases are provided on your HPC
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
