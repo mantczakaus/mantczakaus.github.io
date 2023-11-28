@@ -177,21 +177,11 @@ process {
    beforeScript = 'module load singularity/3.11.4-slurm'
 }
 singularity {
-    cacheDir = '/scratch/pawsey0939/ontvisc/.singularity/NXF_SINGULARITY_CACHEDIR'
+    cacheDir = '<A FOLDER WHERE THE SINGULARITY IMAGES WILL BE DOWNLOADED>'
 }
 ```
-### 
-#### Gadi
-#### Setonix
-### 
-#### Gadi
-#### Setonix
-### 
-#### Gadi
-#### Setonix
-### 
-#### Gadi
-#### Setonix
+### Advanced options: Pre-run script 
+It should be pre-populated from the Compute Environment.
 
 ## Check if required databases are provided on your HPC
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
