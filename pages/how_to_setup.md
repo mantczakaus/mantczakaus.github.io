@@ -109,15 +109,44 @@ You are now ready to create a Compute Environment. Some general tips and instruc
 Provide a name according to the given instructions.
 ### Platform
 #### Gadi
-Altair PBS Pro
+`Altair PBS Pro`
 #### Setonix
-Slurm Workload Manager
+`Slurm Workload Manager`
 ### Credentials
 #### Gadi and Setonix
 Select the Tower Agent credentials that you created in one of the steps before.
 ### Work directory
 #### Gadi and Setonix
-
+Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when pipeline is created and executed.
+### Head queue name
+#### Gadi 
+This doesn't work for now so leave this empty. As a workaround you can specify the head queue name in the `Advanced options: Head job submit options` section.
+#### Setonix
+`work`
+### Compute queue name
+#### Gadi
+This doesn't work for now so leave this empty. As a workaround you can specify the compute queue name when creating the pipeline.
+#### Setonix
+`work`
+### Staging options: Pre-run script
+#### Gadi
+```
+module load nextflow/22.04.3
+module load singularity
+```
+#### Setonix
+```
+module load nextflow/23.04.3
+module load singularity/3.11.4-slurm
+NXF_OPTS='-Xms1g -Xmx4g'
+```
+`NXF_OPTS` is added here instead of in the environmental variables as this functionality doesn't work for now on Setonix.
+### Environment variables
+#### Gadi
+#### Setonix
+### 
+#### Gadi
+#### Setonix
 ### 
 #### Gadi
 #### Setonix
