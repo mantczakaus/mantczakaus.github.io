@@ -1,27 +1,18 @@
 ---
-title: [Individual How-to Guide page]
-type: template
-contributors: 
-description: Add a plain text description here.
-affiliations: 
+title: How to execute ONTvisc pipeline
+toc: false
 ---
 
 
-## heading 1
 
-> Your guide content goes here!
+## Launch Tower Agent
+#### Gadi and Setonix (HPC)
+You need to start Tower Agent so that it is able to pick up the pipeline job when you launch it in Nextflow Tower. Follow instructions in the [How to set up/Launch Tower Agent](https://mantczakaus.github.io/ontvisc_guide/how_to_setup#launch-tower-agent) portion of the guide.
 
-> See the [ELIXIR Toolkit theme](https://elixir-belgium.github.io/elixir-toolkit-theme/markdown_cheat_sheet#images) for info on adding images.
+## Create a folder to which you will direct the execution of the pipeline
+#### Gadi and Setonix
+You had to specify the `Work directory` (and optionally, thr `Launch directory`) when you were adding the Compute Environment. Make sure these folders exist on the HPC.
+#### Lyra (HPC)
 
-### heading 2
 
-> Your guide content goes here!
 
-> Below is an example message box, which comes in multiple styles: `note`, `important`, `tip` and `warning`.
-> See the [ELIXIR Toolkit theme](https://elixir-belgium.github.io/elixir-toolkit-theme/markdown_cheat_sheet#message-boxes) for info on adding message boxes.
-
-{% include callout.html type="note" content="This is a message box. Use the content included here to emphasise important points." %}
-
-#### heading 3
-
-> Your guide content goes here!
