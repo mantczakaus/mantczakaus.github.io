@@ -123,6 +123,55 @@ qsub download_blastdb.sh
 ```
 
 #### Kraken
+The following command will create a script ```download_kraken.sh``` which will download and decompress the Kraken2 database PlusPFP (version from 10/09/2023) that contains Refeq archaea, bacteria, viral, plasmid, human, UniVec_Core plus Refeq protozoa, fungi & plant.  
+{% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command. Change the version as well if necessary." %}
+```bash
+cat <<EOF > download_kraken.sh
+#!/bin/bash -l
+<DIRECTIVES SPECIFIC TO THE SCHEDULER ON YOUR HPC>
+
+cd <FULL PATH TO WHERE YOUR BLAST DB WILL BE STORED>
+wget https://genome-idx.s3.amazonaws.com/kraken/k2_pluspf_20231009.tar.gz
+mkdir -p k2_pluspf_20231009
+tar -zxvf k2_pluspf_20231009.tar.gz -C  k2_pluspf_20231009
+EOF
+```
+After the script `download_kraken.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+#### Gadi
+##### Directives specific to PBS on Gadi
+```bash
+#PBS -N d_kraken
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+#PBS -q copyq
+```
+##### Command to submit the script to PBS
+```bash
+qsub download_kraken.sh
+```
+#### Setonix
+##### Directives specific to Slurm on Setonix
+```bash
+#SBATCH --job-name=d_kraken
+#SBATCH --mem=60gb
+#SBATCH --time=08:00:00
+```
+##### Command to submit the script to Slurm
+```bash
+sbatch download_kraken.sh
+```
+#### Lyra
+##### Directives specific to PBS on Lyra
+```bash
+#PBS -N d_kraken
+#PBS -l mem=60gb
+#PBS -l walltime=08:00:00
+```
+##### Command to submit the script to PBS
+```bash
+qsub download_kraken.sh
+```
+
 #### Kaiju
 #### VirDB
 
