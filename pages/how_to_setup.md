@@ -145,8 +145,10 @@ Add the environment variables like in the screenshots below.<br>
 Leave empty.
 ### Advanced options: Head job submit options
 #### Gadi
-Copy and paste the following text. Replace the <project-id> with the id of the project you were granted on Gadi.<br>
-`-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id> -q copyq`
+Copy and paste the following text. Replace the <project-id> with the id of the project you were granted on Gadi.
+```
+-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id> -q copyq
+```
 #### Setonix
 `--mem=32G --cpus-per-task=8 --time=24:00:00`
 
@@ -163,7 +165,7 @@ Choose `main` or any other revision you want to execute.
 ### Work directory
 It should be pre-populated from the Compute Environment.
 ### Config profiles
-Select `singulariy`.
+Select `singularity`.
 ### Advanced options: Nextflow config file
 #### Gadi
 ```
