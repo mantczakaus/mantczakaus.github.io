@@ -57,7 +57,7 @@ Follow the following steps in the [NextFlow quick start guide](https://eresearch
 1. [Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)<br>
 2. [Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)<br>
 In this step, you also need to add configuration that will let you monitor the pipeline's execution in Nextflow Tower. Paste the following code
-```nextflow
+```
 tower {
   accessToken = <YOUR PERSONAL ACCESS TOKEN>
   endpoint = 'https://tower.services.biocommons.org.au/api'
@@ -66,14 +66,26 @@ tower {
 }
 ```
 after
-```nextflow
+```bash
 [[ -d $HOME/.nextflow ]] || mkdir -p $HOME/.nextflow
 cat <<EOF > $HOME/.nextflow/config
 ```
 {% include callout.html type="note" content="`workspaceId` can be taken from `Your organizations` section of your profile in Nextflow Tower." %}
 
 ## Launch Tower Agent
+You need launch Tower Agent before you add a Compute Environment, add or execute a pipeline. Even if you use Nextflow Tower on Setonix or Gadi, this step needs to be done on HPC directly. Luckily the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory so make sure you create it before you execute the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommendeded to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://help.tower.nf/23.2/supported_software/agent/agent/#quickstart) section of the [Tower Agent help page](https://help.tower.nf/23.2/supported_software/agent/agent) provided by Seqera. Below the tips and recommendations for running the Tower Agent on Gadi and Setonix.
+
 #### Gadi (HPC)
+Start a persistent session
+```
+persistent-sessions start -p <project-id> <session-name>
+```
+ssh to the given address, e.g.
+```
+ssh <session-name>.<user-name>.<project-id>.ps.gadi.nci.org.au
+```
+[Start a tmux session](https://tmuxcheatsheet.com/) and then launch the Tower Agent by using the command provided to you when you created the Tower Agent credentials.
+
 #### Setonix (HPC)
 #### Lyra
 Not applicable.
