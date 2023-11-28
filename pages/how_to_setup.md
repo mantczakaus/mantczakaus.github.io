@@ -53,11 +53,19 @@ Nextflow is available as one of the modules on Gadi, so there is no need for ins
 #### Setonix
 Nextflow is available as one of the modules on Setonix, so there is no need for installation. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
 #### Lyra (HPC)
-Follow the following steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):
-<ol>
-  <li>[Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)</li>
-  <li>[Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)</li>
-</ol>
+Follow the following steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):<br>
+1. [Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)<br>
+2. [Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)<br>
+In this step, you also need to add configuration that will let you monitor the pipeline's execution in Nextflow Tower.
+```
+tower {
+  accessToken = <YOUR PERSONAL ACCESS TOKEN>
+  endpoint = 'https://tower.services.biocommons.org.au/api'
+  workspaceId = <YOUR WORKSPACE ID>
+  enabled = true
+}
+`workspaceId` can be taken from `Your organizations` section of your profile in Nextflow Tower. 
+```
 
 ## Launch Tower Agent
 #### Gadi (HPC)
