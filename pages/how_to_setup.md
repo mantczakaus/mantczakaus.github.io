@@ -3,13 +3,7 @@ title: How to set up ONTvisc pipeline
 toc: false
 ---
 
-## Access to HPC
-#### Gadi
-#### Setonix
-#### Lyra
 
-## Access to Biocommons Tower
-#### Lyra, Gadi and Setonix (Nextflow Tower)
 
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Nextflow Tower)
