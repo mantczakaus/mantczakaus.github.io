@@ -85,8 +85,27 @@ ssh to the given address, e.g.
 ssh <session-name>.<user-name>.<project-id>.ps.gadi.nci.org.au
 ```
 [Start a tmux session](https://tmuxcheatsheet.com/) and then launch the Tower Agent by using the command provided to you when you created the Tower Agent credentials.
-
 #### Setonix (HPC)
+Neither tmux nor screen are available on Setonix so it is recommended to rather submit a job to Slurm that will keep the Tower Agent running for a certain period of time. The following command creates a Slurm script with directives required to run Tower Agent on Setonix. Copy the following command, replace the instructions provided to you when you created the Tower Agent credentials, then execute the command in your terminal.
+```bash
+cat <<EOF > run_toweragent.sh
+#!/bin/bash -l
+#SBATCH --job-name=tw-agent
+#SBATCH --mem=12gb
+#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=2
+#SBATCH --partition=work
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
+
+cd ~
+<INSTRUCTIONS PROVIDED TO YOU WHEN YOU CREATED THE TOWER AGENT CREDENTIALS>
+EOF
+```
+Once the `run_toweragent.sh` file is created, submit it to Slurm by running
+```bash
+sbatch run_toweragent.sh
+```
 #### Lyra
 Not applicable.
 
