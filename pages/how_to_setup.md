@@ -137,14 +137,17 @@ NXF_OPTS='-Xms1g -Xmx4g'
 ```
 ### Environment variables
 #### Gadi
+Add the environment variables like in the screenshots below.<br>
+![Nextflow singularity cache](./images/envvar_cache.png) <br>
+![Nextflow options](./images/envvar_opts.png) <br>
 #### Setonix
-### 
+Leave empty.
+### Advanced options: Head job submit options
 #### Gadi
+Copy and paste the following text. Replace the <project-id> with the id of the project you were granted on Gadi.
+`-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id> -q copyq`
 #### Setonix
-### 
-#### Gadi
-#### Setonix
-
+`--mem=32G --cpus-per-task=8 --time=24:00:00`
 
 ## Add a pipeline
 #### Gadi and Setonix (Nextflow Tower)
