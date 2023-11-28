@@ -56,7 +56,12 @@ Nextflow is available as one of the modules on Setonix, so there is no need for 
 Follow the following steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):<br>
 1. [Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)<br>
 2. [Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)<br>
-In this step, you also need to add configuration that will let you monitor the pipeline's execution in Nextflow Tower.
+In this step, you also need to add configuration that will let you monitor the pipeline's execution in Nextflow Tower. Paste the following code after
+```nextflow
+  cleanup = false
+}
+```
+and before `EOF`. The code to paste:
 ```
 tower {
   accessToken = <YOUR PERSONAL ACCESS TOKEN>
