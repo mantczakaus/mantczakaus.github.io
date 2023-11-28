@@ -36,16 +36,12 @@ You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does 
 GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 {% include callout.html type="note" content="You will need a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) first." %}
 {% include callout.html type="note" content="Copy/securely store the access token from GitHub. You will need it to use it in Nextflow Tower in the next step." %}
-#### Lyra
-Not applicable.
 
 
 ## Add Credentials for GitHub
 #### Gadi and Setonix (Nextflow Tower)
 Credentials for GitHub are created in a similar way to credentials for Tower Agent - you need to navigate to Credentials tab and you have an option to add them at the organisation or personal level. However, instead of choosing Tower Agent as Provider, you'll need to choose GitHub. Fill in the rest according to the help text provided under each of the fields.<br> 
 ![GitHub Credentials](./images/credentials_github.png)
-#### Lyra
-Not applicable.
 
 ## Install Nextflow and add default configuration
 #### Gadi
@@ -106,18 +102,29 @@ Once the `run_toweragent.sh` file is created, submit it to Slurm by running
 ```bash
 sbatch run_toweragent.sh
 ```
-#### Lyra
-Not applicable.
 
 ## Add a Compute Environment
-#### Gadi and Setonix (Nextflow Tower)
-#### Lyra
-Not applicable.
+You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix.
+### Name
+Provide a name according to the given instructions.
+### Platform
+#### Gadi
+Altair PBS Pro
+#### Setonix
+Slurm Workload Manager
+### Credentials
+#### Gadi and Setonix
+Select the Tower Agent credentials that you created in one of the steps before.
+### Work directory
+#### Gadi and Setonix
+
+### 
+#### Gadi
+#### Setonix
+
 
 ## Add a pipeline
 #### Gadi and Setonix (Nextflow Tower)
-#### Lyra
-Not applicable.
 
 ## Check if required databases are provided on your HPC
 Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
