@@ -11,9 +11,6 @@ toc: false
 ### This guide
 In this guide you will find instructions on how to set up and execute the ONTvisc pipeline on three high performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide).
 
-## Please cite this guide as follows
-{% include callout.html type="warning" content="SUBMIT TO ZENODO AND FILL THIS IN" %}
-
 ## Acknowledgements
 
 This guide makes use of the [ELIXIR toolkit theme](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
