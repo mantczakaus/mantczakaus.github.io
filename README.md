@@ -11,4 +11,4 @@ This repository makes use of the ELIXIR toolkit theme: [![theme badge](https://i
 
 This template is based on the [ELIXIR Toolkit Theme example](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme-example).
 
-Thank you to Sarah Beecroft (Pawsey), Matthew Downton (Gadi) and Ziad Al-Bkhetan (Australian BioCommons) for help with testing the pipeline on Gadi and Setonix, as well as providing valuable information regarding these two high performance computing environments.
+Thank you to Sarah Beecroft (Pawsey), Matthew Downton (Gadi) and Ziad Al-Bkhetan (Australian BioCommons) for help with testing the pipeline on Gadi and Setonix, as well as providing valuable information regarding these two high performance computing environments. Thank you to eResearch team from QUT for making possible to execute the ONTvisc pipeline on Lyra and all the provided support.
