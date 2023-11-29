@@ -195,7 +195,7 @@ If the access to Gadi was granted to you through the [ABLeS initiative](https://
 #### Setonix
 Check if databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage#PawseyFilesystemsandtheirUsage-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Lyra
-{% include callout.html type="warning" content="COLLECT INFO AND FILL THIS IN." %}
+Check with the [eResearch team](https://www.qut.edu.au/research/eresearch) if Lyra has a shared repository of references. If not, proceed with the installation yourself (below).
 
 
 ## Download databases if they are not provided
