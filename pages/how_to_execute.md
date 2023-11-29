@@ -60,9 +60,18 @@ Execute the `qstat -u <user-name>` to see the progress of the pipeline.
 Execute the `squeue -u <user-name>` to see the progress of the pipeline.
 
 ## Relaunching and resuming
-#### Nextflow Tower
+#### Gadi and Setonix (Nextflow Tower)
 Tips on relaunching and resuming the pipeline in the [Seqera's guide for Nextflow Tower](https://help.tower.nf/23.2/launch/launchpad/#relaunch-pipeline-run)
-#### HPC
+### Lyra (HPC)
 If you need to relaunch the pipeline, just re-submit the script. Tips on resuming can be found in the two blog posts from Nextflow: [Troubleshooting Nextflow resume](https://www.nextflow.io/blog/2019/troubleshooting-nextflow-resume.html) and [Demystifying Nextflow resume](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html).
 
 ## Results
+The ONTvisc pipeline with the `test` configuration perform de novo assembly of the reads with Canu and compares the the assembled contig to a reference. If pipeline is completed successfuly, you should see the output files both on HPC (and Nextflow Tower in case of Gadi and Setonix).
+### HPC
+#### Gadi, Setonix and Lyra
+Follow the [Output files/De novo assembly mode](https://github.com/eresearchqut/ontvisc/wiki/Output-files#de-novo-assembly-mode) section of the ONTvisc pipeline's wiki page to check what output should be expected.
+
+### Nextflow Tower
+#### Gadi and Setonix
+Three reports should be generated.
+![Reports](.images/reports.png)
