@@ -398,6 +398,3 @@ sbatch download_virdb.sh
 ```bash
 qsub download_virdb.sh
 ```
-
-## Useful links
-## Submit scripts to PBS
