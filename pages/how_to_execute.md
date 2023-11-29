@@ -25,6 +25,7 @@ When `test` configuration is used, you do not need to specify any parameters. Ho
 ```
 outdir: <PATH WHERE YOU WANT THE RESULTS TO BE STORED>
 ```
+{% include callout.html type="note" content="Pipeline parameters can be parsed in the JSON or YAML format. The `outdir` above is parsed in the YAML format. Examples can be found in the [CLI/run/Examples](https://www.nextflow.io/docs/latest/cli.html#run) portion of the Nextflow guide." %}
 #### Lyra (HPC)
 Create a submission script in the `Launch directory` by copying and pasting the following command into your terminal (change the required paths first).
 ```bash
@@ -49,5 +50,19 @@ EOF
 Submit the script to the PBS scheduler by executing the command `qsub submit_test.sh`.
 
 ## Monitoring
+### Nextflow Tower
+#### Gadi, Setonix and Lyra
+Tips on monitoring in the [Seqera's guide for Nextflow Tower](https://help.tower.nf/23.2/monitoring/overview/)
+### HPC
+#### Gadi and Lyra
+Execute the `qstat -u <user-name>` to see the progress of the pipeline.
+#### Setonix
+Execute the `squeue -u <user-name>` to see the progress of the pipeline.
+
+## Relaunching and resuming
+#### Nextflow Tower
+Tips on relaunching and resuming the pipeline in the [Seqera's guide for Nextflow Tower](https://help.tower.nf/23.2/launch/launchpad/#relaunch-pipeline-run)
+#### HPC
+If you need to relaunch the pipeline, just re-submit the script. Tips on resuming can be found in the two blog posts from Nextflow: [Troubleshooting Nextflow resume](https://www.nextflow.io/blog/2019/troubleshooting-nextflow-resume.html) and [Demystifying Nextflow resume](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html).
 
 ## Results
