@@ -75,3 +75,6 @@ Follow the [Output files/De novo assembly mode](https://github.com/eresearchqut/
 #### Gadi and Setonix
 Three reports should be generated.
 ![Reports](.images/reports.png)
+
+## Beyond test configuration
+Other usage examples can be found in the [GitHub Wiki/Running the pipeline](https://github.com/eresearchqut/ontvisc/wiki/Running-the-pipeline) page. The examples include Nextflow commands with the required parameters being set up for each of different modes, e.g. [Read classification analysis mode](https://github.com/eresearchqut/ontvisc/wiki/Read-classification-analysis-mode).
