@@ -17,6 +17,4 @@ title: [Before you start]
 [User Guide for the Australian BioCommons Nextflow Tower Service](https://australianbiocommons.github.io/tower/user-guide/)
 
 ## Other prerequisites
-ONTvisc is a pipeline written in Nextflow and thus you must have some knowledge of this workflow orchestration engine. In addition, you need to know how to use a command line - create directories, navigate between the folders, execute commands, etc. It may be come in handy when the pipeline needs troubleshooting or to launch the Tower Agent. Some useful links:<br>
-[Nextflow documentation](https://www.nextflow.io/docs/latest/)<br>
-[Nextflow training](https://training.nextflow.io/)
+ONTvisc is a pipeline written in Nextflow and thus you must have some knowledge of this workflow orchestration engine. In addition, you need to know how to use a command line - create directories, navigate between the folders, execute commands, etc. It may be come in handy when the pipeline needs troubleshooting or to launch the Tower Agent.
