@@ -1,5 +1,5 @@
 ---
-title: DRAFT: How to set up and execute ONTvisc pipeline
+title: USER GUIDE DRAFT How to set up and execute ONTvisc pipeline
 toc: false
 ---
 
