@@ -7,46 +7,46 @@ toc: false
 
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Nextflow Tower)
-You will need the authentication token for running Tower Agent (Gadi, Setonix) and to direct monitoring of the pipeline to Nextflow Tower (Lyra). The authentication token can be created in `Your tokens` section of your profile in Nextflow Tower.<br> 
+You need the authentication token to run Tower Agent (Gadi, Setonix) and monitor the pipeline to Nextflow Tower (Gadi, Setonix and Lyra). The authentication token can be created in `Your tokens` section of your profile in Nextflow Tower.<br> 
 ![Token](./images/token.png) <br>
 More information on the authentication can be found in the Nextflow Tower documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/tower/user-guide/create_personal_token).
 
 
 ## Add Credentials for Tower Agent
 #### Gadi and Setonix (Nextflow Tower)
-Tower Agent needs to be run continuously to be able to pick up jobs from Nextflow Tower and execute them on the HPC. It will also display the output log live and reports after its completed. To run Tower Agent on HPC you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
-If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled sharing the agent. If that's not the case, you'll need to create the credentials yourself. Either way go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not click Add Credentials.<br> 
+Tower Agent needs to be run continuously to pick up jobs from Nextflow Tower, execute them on the HPC, and display the output log live and reports after completion. To run Tower Agent on HPC, you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
+If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled the sharing of the agent. If that is not the case, you will need to create the credentials yourself. Either way, go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not, click Add Credentials.<br> 
 ![Organisation Credentials](./images/credentials_org.png) <br>
-You can also created credentials to work in your personal workspace.<br>
+You can also create credentials to work in your personal workspace.<br>
 ![Personal Credentials](./images/credentials_personal.png) <br>
-{% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you will be able to use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
+{% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you can use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
 More information on adding the credentials can be found in Nextflow Tower documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials).
 #### Lyra
-You are only allowed to monitor jobs using Nextflow Tower on Lyra and that does not require running the Tower Agent.
+You are only allowed to monitor jobs using Nextflow Tower on Lyra, which does not require running the Tower Agent.
 
 
 ## Add Personal Access Token in GitHub
 #### Gadi and Setonix (Nextflow Tower)
-GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when personal access token is used - that's why we recommend creating one and adding it into credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in Nextflow Tower directly from GitHub repository). You can increase that number when a personal access token is used - we recommend creating one and adding it to the credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 {% include callout.html type="note" content="You will need a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) first." %}
 {% include callout.html type="note" content="Copy/securely store the access token from GitHub. You will need it to use it in Nextflow Tower in the next step." %}
 
 
 ## Add Credentials for GitHub
 #### Gadi and Setonix (Nextflow Tower)
-Credentials for GitHub are created in a similar way to credentials for Tower Agent - you need to navigate to Credentials tab and you have an option to add them at the organisation or personal level. However, instead of choosing Tower Agent as Provider, you'll need to choose GitHub. Fill in the rest according to the help text provided under each of the fields.<br> 
+Credentials for GitHub are created similarly to credentials for Tower Agent – you also have the option to add them at the organisation or personal level, and you need to navigate to the Credentials tab. However, instead of choosing Tower Agent as a Provider, you will need to choose GitHub. Fill in the rest according to the help text provided under each field.<br> 
 ![GitHub Credentials](./images/credentials_github.png)
 
 ## Install Nextflow and add default configuration
 #### Gadi
-Nextflow is available as one of the modules on Gadi, so there is no need for installation. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
+Nextflow is available as one of the modules on Gadi, so installation is unnecessary. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
 #### Setonix
-Nextflow is available as one of the modules on Setonix, so there is no need for installation. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
+Nextflow is available as one of the modules on Setonix, so installation is unnecessary. Any required configuration will be provided through the Compute Environment in Nextflow Tower. 
 #### Lyra (HPC)
 Follow the following steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):<br>
 1. [Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)<br>
 2. [Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)<br>
-In this step, you also need to add configuration that will let you monitor the pipeline's execution in Nextflow Tower. Paste the following code
+In this step, you must also add a configuration to monitor the pipeline's execution in Nextflow Tower. Paste the following code:
 ```
 tower {
   accessToken = <YOUR PERSONAL ACCESS TOKEN>
@@ -63,7 +63,7 @@ cat <<EOF > $HOME/.nextflow/config
 {% include callout.html type="note" content="`workspaceId` can be taken from `Your organizations` section of your profile in Nextflow Tower." %}
 
 ## Launch Tower Agent
-You need launch Tower Agent before you add a Compute Environment, add or execute a pipeline. Even if you use Nextflow Tower on Setonix or Gadi, this step needs to be done on HPC directly. Luckily the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory so make sure you create it before you execute the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommendeded to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://help.tower.nf/23.2/supported_software/agent/agent/#quickstart) section of the [Tower Agent help page](https://help.tower.nf/23.2/supported_software/agent/agent) provided by Seqera. Below the tips and recommendations for running the Tower Agent on Gadi and Setonix.
+You need to launch Tower Agent before you add a Compute Environment, as well as to add or execute a pipeline. Even if you use Nextflow Tower on Setonix or Gadi, this step needs to be done on HPC directly. Luckily, the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory, so create it before executing the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommended to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://help.tower.nf/23.2/supported_software/agent/agent/#quickstart) section of the [Tower Agent help page](https://help.tower.nf/23.2/supported_software/agent/agent) provided by Seqera). Below are the tips and recommendations for running the Tower Agent on Gadi and Setonix.
 
 #### Gadi (HPC)
 Start a persistent session
@@ -76,7 +76,7 @@ ssh <session-name>.<user-name>.<project-id>.ps.gadi.nci.org.au
 ```
 [Start a tmux session](https://tmuxcheatsheet.com/) and then launch the Tower Agent by using the command provided to you when you created the Tower Agent credentials.
 #### Setonix (HPC)
-Neither tmux nor screen are available on Setonix so it is recommended to rather submit a job to Slurm that will keep the Tower Agent running for a certain period of time. The following command creates a Slurm script with directives required to run Tower Agent on Setonix. Copy the following command, replace the instructions provided to you when you created the Tower Agent credentials, then execute the command in your terminal.
+Neither `tmux` nor `screen` is available on Setonix, so submitting a job to Slurm is recommended to keep the Tower Agent running for a certain period. The following command creates a Slurm script with directives required to run Tower Agent on Setonix. Copy the following command, replace the instructions provided to you when you created the Tower Agent credentials, and then execute the command in your terminal.
 ```bash
 cat <<EOF > run_toweragent.sh
 #!/bin/bash -l
@@ -98,9 +98,9 @@ sbatch run_toweragent.sh
 ```
 
 ## Add a Compute Environment
-You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisation workspace, just click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to Compute Environments tab.<br>
+You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below are instructions on what to fill in the specific fields to run the ONTvisc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
 ![Workspaces](./images/compute_env_whereto.png) <br>
-{% include callout.html type="note" content="A few issues were revealed when the ONTvisc pipeline was tested using Nextflow Tower on Gadi and Setonix. Firstly, queue names were not used correctly on Gadi when filled in from the `Head queue name` and `Work queue name`. Secondly, values for the environment variables were not assigned correctly in Setonix when populated in the `Environment variables` section. Finally, version 23.04.3 of Nextflow causes problems when tower.yml file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply workarounds specified below." %}
+{% include callout.html type="note" content="A few issues were revealed when the ONTvisc pipeline was tested using Nextflow Tower on Gadi and Setonix. Firstly, Gadi's queue names were not correctly used when filled in from the `Head queue name` and `Work queue name`. Secondly, values for the environment variables were not assigned correctly in Setonix when populated in the `Environment variables` section. Finally, version 23.04.3 of Nextflow causes problems when the `tower.yml` file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply the workarounds specified below." %}
 ### Name
 Provide a name according to the given instructions.
 ### Platform
@@ -110,13 +110,13 @@ Provide a name according to the given instructions.
 `Slurm Workload Manager`
 ### Credentials
 #### Gadi and Setonix
-Select the Tower Agent credentials that you created in one of the steps before.
+Select the Tower Agent credentials you created in one of the previous steps.
 ### Work directory
 #### Gadi and Setonix
-Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when pipeline is created and executed.
+Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when the pipeline is created and executed.
 ### Launch directory
 #### Gadi and Setonix
-After the pipeline is launched from the Nextflow Tower, a script submission to the scheduler will be created and submitted on your behalf on the HPC. The `Launch directory` is where all those scripts, configuration files and logs will be stored. You can specify it or leave empty (it will be populated with `Work directory` in the latter case).
+After the pipeline is launched from the Nextflow Tower, a script submission to the scheduler will be created and submitted on your behalf on the HPC. The `Launch directory` will store all those scripts, configuration files and logs. You can specify it or leave it empty (it will be populated with `Work directory` in the latter case).
 ### Head queue name
 #### Gadi 
 Leave empty.
@@ -148,7 +148,7 @@ Add the environment variables like in the screenshots below.<br>
 Leave empty.
 ### Advanced options: Head job submit options
 #### Gadi
-Copy and paste the following text. Replace the <project-id> with the id of the project you were granted on Gadi.
+Copy and paste the following text. Replace the <project-id> with the project ID you were granted on Gadi.
 ```
 -l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id> -q copyq
 ```
@@ -156,7 +156,7 @@ Copy and paste the following text. Replace the <project-id> with the id of the p
 `--mem=32G --cpus-per-task=8 --time=24:00:00`
 
 ## Add a pipeline
-Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://help.tower.nf/23.2/launch/launchpad/). Below instructions on what to fill in the specific fields to run ONTvisc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace, just click on your user name in the top left corner of the page, select the corresponding workspace but then navigate to Launchpad tab.
+Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://help.tower.nf/23.2/launch/launchpad/). Below are instructions on what to fill in the specific fields to run the ONTvisc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace. Just click on your user name in the top left corner of the page, select the corresponding workspace, but then navigate to the Launchpad tab.
 ### Name
 Provide a name according to the given instructions.
 ### Compute environment
@@ -189,18 +189,18 @@ singularity {
 It should be pre-populated from the Compute Environment.
 
 ## Check if required databases are provided on your HPC
-Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below instructions on where to find the required databases depending on the HPC.
+Tools in the ONTvisc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below are instructions for finding the required databases depending on the HPC.
 #### Gadi
-If the access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you will have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for the databases you need. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
+If access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for your needed databases. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Setonix
-Check if databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage#PawseyFilesystemsandtheirUsage-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
+Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage#PawseyFilesystemsandtheirUsage-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Lyra
 Check with the [eResearch team](https://www.qut.edu.au/research/eresearch) if Lyra has a shared repository of references. If not, proceed with the installation yourself (below).
 
 
 ## Download databases if they are not provided
 ### BLAST nucleotide sequence database (NT)
-The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl which will download and decompress all the necessary latest components of the NT database.  
+The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl, which will download and decompress all the necessary latest components of the NT database.  
 {% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command." %}
 ```bash
 cat <<EOF > download_blastdb.sh
@@ -215,7 +215,7 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 ```
-After the script `download_blastdb.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+After creating the script `download_blastdb.sh`, submit it to the scheduler. The command will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
 ##### Directives specific to PBS on Gadi
 ```bash
@@ -265,7 +265,7 @@ mkdir -p k2_pluspf_20231009
 tar -zxvf k2_pluspf_20231009.tar.gz -C  k2_pluspf_20231009
 EOF
 ```
-After the script `download_kraken.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+After creating the script `download_kraken.sh`, submit it to the scheduler. The command will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
 ##### Directives specific to PBS on Gadi
 ```bash
@@ -314,7 +314,7 @@ wget https://kaiju-idx.s3.eu-central-1.amazonaws.com/2023/kaiju_db_rvdb_2023-05-
 tar -zxvf kaiju_db_rvdb_2023-05-26.tgz
 EOF
 ```
-After the script `download_kaiju.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+After creating the script `download_kaiju.sh`, submit it to the scheduler. The command will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
 ##### Directives specific to PBS on Gadi
 ```bash
@@ -351,7 +351,7 @@ qsub download_kaiju.sh
 ```
 
 ### VirDB
-The following command will create a script ```download_virdb.sh``` which will download and decompress [the collection of viral sequences](https://zenodo.org/records/10183620).
+The following command will create a script, ```download_virdb.sh```, which will download and decompress [the collection of viral sequences](https://zenodo.org/records/10183620).
 {% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command. Change the version as well if necessary." %}
 ```bash
 cat <<EOF > download_virdb.sh
@@ -363,7 +363,7 @@ https://zenodo.org/records/10183620/files/VirDB_20230913.tar.gz
 tar -zxvf VirDB_20230913.tar.gz
 EOF
 ```
-After the script `download_virdb.sh` is created, submit it to the scheduler. The command to be used will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+After creating the script `download_virdb.sh`, submit it to the scheduler. The command will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 #### Gadi
 ##### Directives specific to PBS on Gadi
 ```bash
