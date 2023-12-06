@@ -154,6 +154,7 @@ Copy and paste the following text. Replace the <project-id> with the project ID 
 ```
 #### Setonix
 `--mem=32G --cpus-per-task=8 --time=24:00:00`
+{% include callout.html type="note" content="The memory assigned to the head job may need to be increased in case the pipeline fails with an `out of memory` error when downloading the singularity images of the tools." %}
 
 ## Add a pipeline
 Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://help.tower.nf/23.2/launch/launchpad/). Below are instructions on what to fill in the specific fields to run the ONTvisc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace. Just click on your user name in the top left corner of the page, select the corresponding workspace, but then navigate to the Launchpad tab.
@@ -351,7 +352,9 @@ qsub download_kaiju.sh
 ```
 
 ### VirDB
-The following command will create a script, ```download_virdb.sh```, which will download and decompress [the collection of viral sequences](https://zenodo.org/records/10183620).
+VirDB is a database created by the QUT eResearch team by merging GenBank, RefSeq and NCBI virus sequences and collapsing those with 99% similarity.<br>
+The following command will create a script, ```download_virdb.sh```, which will download and decompress [this collection of viral sequences](https://zenodo.org/records/10183620).
+
 {% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command. Change the version as well if necessary." %}
 ```bash
 cat <<EOF > download_virdb.sh
