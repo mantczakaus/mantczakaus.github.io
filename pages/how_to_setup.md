@@ -100,7 +100,7 @@ sbatch run_toweragent.sh
 ## Add a Compute Environment
 You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below are instructions on what to fill in the specific fields to run the ONTvisc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
 ![Workspaces](./images/compute_env_whereto.png) <br>
-{% include callout.html type="note" content="There are a few discrepancies between how the Setonix and Gadi are managed, and some additional options will be required here and there. In addition, on Gadi, version 23.04.3 of Nextflow causes problems when the `tower.yml` file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply the workarounds specified below." %}
+{% include callout.html type="note" content="There are a few discrepancies between how Setonix and Gadi are managed, and some additional settings will be required here and there. In addition, version 23.04.3 of Nextflow causes problems on Gadi when the tower.yml file is used to populate reports in the Reports tab (bug)." %}
 ### Name
 Provide a name according to the given instructions.
 ### Platform
