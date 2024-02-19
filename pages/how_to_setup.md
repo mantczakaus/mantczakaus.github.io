@@ -100,7 +100,7 @@ sbatch run_toweragent.sh
 ## Add a Compute Environment
 You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below are instructions on what to fill in the specific fields to run the ONTvisc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
 ![Workspaces](./images/compute_env_whereto.png) <br>
-{% include callout.html type="note" content="A few issues were revealed when the ONTvisc pipeline was tested using Nextflow Tower on Gadi and Setonix. Firstly, Gadi's queue names were not correctly used when filled in from the `Head queue name` and `Work queue name`. Secondly, values for the environment variables were not assigned correctly in Setonix when populated in the `Environment variables` section. Finally, version 23.04.3 of Nextflow causes problems when the `tower.yml` file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply the workarounds specified below." %}
+{% include callout.html type="note" content="There are a few discrepancies between how the Setonix and Gadi are managed, and some additional options will be required here and there. In addition, on Gadi, version 23.04.3 of Nextflow causes problems when the `tower.yml` file is used to populate reports in the Reports tab. While all these issues remain under investigation, you will need to apply the workarounds specified below." %}
 ### Name
 Provide a name according to the given instructions.
 ### Platform
@@ -119,7 +119,7 @@ Specify a directory where all the task work directories will be created (more in
 After the pipeline is launched from the Nextflow Tower, a script submission to the scheduler will be created and submitted on your behalf on the HPC. The `Launch directory` will store all those scripts, configuration files and logs. You can specify it or leave it empty (it will be populated with `Work directory` in the latter case).
 ### Head queue name
 #### Gadi 
-Leave empty.
+`copyq`
 #### Setonix
 `work`
 ### Compute queue name
@@ -137,20 +137,17 @@ module load singularity
 ```
 module load nextflow/23.04.3
 module load singularity/3.11.4-slurm
-NXF_OPTS='-Xms1g -Xmx4g'
 ```
 ### Environment variables
-#### Gadi
+#### Gadi and Setonix
 Add the environment variables like in the screenshots below.<br>
 ![Nextflow singularity cache](./images/envvar_cache.png) <br>
 ![Nextflow options](./images/envvar_opts.png) <br>
-#### Setonix
-Leave empty.
 ### Advanced options: Head job submit options
 #### Gadi
 Copy and paste the following text. Replace the <project-id> with the project ID you were granted on Gadi.
 ```
--l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id> -q copyq
+-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id>
 ```
 #### Setonix
 `--mem=32G --cpus-per-task=8 --time=24:00:00`
