@@ -178,9 +178,9 @@ process {
    beforeScript = 'module load singularity'
    storage = 'scratch/<project-id>+gdata/<project-id>'
 }
+```
 If you are a part of the `if89` project and want to use its databases, you need to link that location as well:
 `storage = 'scratch/<project-id>+gdata/<project-id>+gdata/if89'`
-```
 #### Setonix
 ```
 process {
