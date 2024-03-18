@@ -147,7 +147,11 @@ Add the environment variables like in the screenshots below.<br>
 #### Gadi
 Copy and paste the following text. Replace the <project-id> with the project ID you were granted on Gadi.
 ```
--l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>,wd -P <project-id>
+-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>+gdata/<project-id>,wd -P <project-id>
+```
+If you are a part of the `if89` project and want to use its databases, you need to link that location as well via `-l storage` directive, i.e. 
+```
+-l walltime=10:00:00,ncpus=1,mem=32gb,storage=scratch/<project-id>+gdata/<project-id>+gdata/if89,wd -P <project-id>
 ```
 #### Setonix
 `--mem=32G --cpus-per-task=8 --time=24:00:00`
@@ -172,7 +176,10 @@ Select `singularity`.
 ```
 process {
    beforeScript = 'module load singularity'
+   storage = 'scratch/<project-id>+gdata/<project-id>'
 }
+If you are a part of the `if89` project and want to use its databases, you need to link that location as well:
+`storage = 'scratch/<project-id>+gdata/<project-id>+gdata/if89'`
 ```
 #### Setonix
 ```
