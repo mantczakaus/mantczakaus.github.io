@@ -12,9 +12,8 @@ title: [Before you start]
 #### Lyra
 [Start using the HPC](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC)
 
-## Access to the Australian Biocommons Nextflow Tower
-[The Australian BioCommons Nextflow Tower pilot project](https://australianbiocommons.github.io/tower/)<br>
-[User Guide for the Australian BioCommons Nextflow Tower Service](https://australianbiocommons.github.io/tower/user-guide/)
+## Access to the Australian Nextflow Seqera Service
+[The Australian Nextflow Seqera Service](https://www.biocommons.org.au/seqera-service)<br>
 
 ## Other prerequisites
-ONTvisc is a pipeline written in Nextflow; thus, a basic knowledge of this workflow orchestration engine is required. In addition, you need to know how to use a command line - create directories, navigate between the folders, execute commands, etc. It may be useful for launching the Tower Agent or when the pipeline needs troubleshooting.
+ONTViSc is a pipeline written in Nextflow; thus, a basic knowledge of this workflow orchestration engine is required. In addition, you need to know how to use a command line - create directories, navigate between the folders, execute commands, etc. It may be useful for launching the Tower Agent to enable Australian Nextflow Seqera Service or when the pipeline needs troubleshooting.
