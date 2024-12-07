@@ -8,7 +8,7 @@ toc: false
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Australian Nextflow Seqera Service)
 You need the authentication token to run Tower Agent (Gadi, Setonix) and monitor the pipeline in the Australian Nextflow Seqera Service (Gadi, Setonix and Lyra). The authentication token can be created in `Your tokens` section of your profile in the Australian Nextflow Seqera Service.<br> 
-<img alt="Token" src="./images/token.png" width="500" height="300"> <br>
+<img alt="Token" src="./images/token.png" height="300"> <br>
 More information on the authentication can be found in the the Australian Nextflow Seqera Service documentation: [Authentication (Seqera)](https://docs.seqera.io/platform/24.1/api/overview#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-access-token).
 
 
@@ -16,9 +16,9 @@ More information on the authentication can be found in the the Australian Nextfl
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
 Tower Agent needs to be run continuously to pick up jobs from the Australian Nextflow Seqera Service, execute them on the HPC, and display the output log live and reports after completion. To run Tower Agent on HPC, you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
 If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled the sharing of the agent. If that is not the case, you will need to create the credentials yourself. Either way, go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not, click Add Credentials.<br> 
-<img alt="Organisation Credentials" src="./images/credentials_org.png" width="500" height="300"> <br>
+<img alt="Organisation Credentials" src="./images/credentials_org.png" height="300"> <br>
 You can also create credentials to work in your personal workspace.<br>
-<img alt="Personal Credentials" src="./images/credentials_personal.png" width="500" height="300"> <br>
+<img alt="Personal Credentials" src="./images/credentials_personal.png" height="300"> <br>
 {% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you can use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
 More information on adding the credentials can be found in the Australian Nextflow Seqera Service documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent).
 #### Lyra
@@ -35,7 +35,7 @@ GitHub is very restrictive about the number of times you can make [API requests]
 ## Add Credentials for GitHub
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
 Credentials for GitHub are created similarly to credentials for Tower Agent – you also have the option to add them at the organisation or personal level, and you need to navigate to the Credentials tab. However, instead of choosing Tower Agent as a Provider, you will need to choose GitHub. Fill in the rest according to the help text provided under each field.<br> 
-<img alt="GitHub Credentials" src="./images/credentials_github.png" width="500" height="300">
+<img alt="GitHub Credentials" src="./images/credentials_github.png" height="300">
 
 ## Install Nextflow and add default configuration
 #### Gadi
@@ -99,7 +99,7 @@ sbatch run_toweragent.sh
 
 ## Add a Compute Environment
 You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-cop-env) and in the [Seqera help pages](https://docs.seqera.io/platform/24.1/compute-envs/overview). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
-<img alt="Workspaces" src="./images/compute_env_whereto.png" width="500" height="300"> <br>
+<img alt="Workspaces" src="./images/compute_env_whereto.png" height="300"> <br>
 {% include callout.html type="note" content="There are a few discrepancies between how Setonix and Gadi are managed, and some additional settings will be required here and there. In addition, version 23.04.3 of Nextflow causes problems on Gadi when the tower.yml file is used to populate reports in the Reports tab (bug)." %}
 ### Name
 Provide a name according to the given instructions.
@@ -141,8 +141,8 @@ module load singularity/3.11.4-slurm
 ### Environment variables
 #### Gadi and Setonix
 Add the environment variables like in the screenshots below.<br>
-<img alt="Nextflow singularity cache" src="./images/envvar_cache.png" width="500" height="300"> <br>
-<img alt="Nextflow options" src="./images/envvar_opts.png" width="500" height="300"> <br>
+<img alt="Nextflow singularity cache" src="./images/envvar_cache.png" height="300"> <br>
+<img alt="Nextflow options" src="./images/envvar_opts.png" height="300"> <br>
 ### Advanced options: Head job submit options
 #### Gadi
 Copy and paste the following text. Replace the <project-id> with the project ID you were granted on Gadi.
