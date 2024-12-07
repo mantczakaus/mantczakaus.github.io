@@ -9,7 +9,7 @@ toc: false
 #### Lyra, Gadi and Setonix (Australian Nextflow Seqera Service)
 You need the authentication token to run Tower Agent (Gadi, Setonix) and monitor the pipeline in the Australian Nextflow Seqera Service (Gadi, Setonix and Lyra). The authentication token can be created in `Your tokens` section of your profile in the Australian Nextflow Seqera Service.<br> 
 ![Token](./images/token.png) <br>
-More information on the authentication can be found in the the Australian Nextflow Seqera Service documentation: [Authentication (Seqera)](https://help.tower.nf/23.2/api/overview/#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/tower/user-guide/create_personal_token).
+More information on the authentication can be found in the the Australian Nextflow Seqera Service documentation: [Authentication (Seqera)](https://docs.seqera.io/platform/24.1/api/overview#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-access-token).
 
 
 ## Add Credentials for Tower Agent
@@ -20,7 +20,7 @@ If you are part of an organisational workspace, someone might have already creat
 You can also create credentials to work in your personal workspace.<br>
 ![Personal Credentials](./images/credentials_personal.png) <br>
 {% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you can use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
-More information on adding the credentials can be found in the Australian Nextflow Seqera Service documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials).
+More information on adding the credentials can be found in the Australian Nextflow Seqera Service documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent).
 #### Lyra
 You are only allowed to monitor jobs using the Australian Nextflow Seqera Service on Lyra, which does not require running the Tower Agent.
 
@@ -63,7 +63,7 @@ cat <<EOF > $HOME/.nextflow/config
 {% include callout.html type="note" content="`workspaceId` can be taken from `Your organizations` section of your profile in the Australian Nextflow Seqera Service." %}
 
 ## Launch Tower Agent
-You need to launch Tower Agent before you add a Compute Environment, as well as to add or execute a pipeline. Even if you use the Australian Nextflow Seqera Service on Setonix or Gadi, this step needs to be done on HPC directly. Luckily, the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/tower/user-guide/create_tower_agent_credentials). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory, so create it before executing the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommended to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://help.tower.nf/23.2/supported_software/agent/agent/#quickstart) section of the [Tower Agent help page](https://help.tower.nf/23.2/supported_software/agent/agent) provided by Seqera). Below are the tips and recommendations for running the Tower Agent on Gadi and Setonix.
+You need to launch Tower Agent before you add a Compute Environment, as well as to add or execute a pipeline. Even if you use the Australian Nextflow Seqera Service on Setonix or Gadi, this step needs to be done on HPC directly. Luckily, the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory, so create it before executing the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommended to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://docs.seqera.io/platform/24.1/supported_software/agent#quickstart) section of the [Tower Agent help page](https://docs.seqera.io/platform/24.1/supported_software/agent) provided by Seqera). Below are the tips and recommendations for running the Tower Agent on Gadi and Setonix.
 
 #### Gadi (HPC)
 Start a persistent session
@@ -98,7 +98,7 @@ sbatch run_toweragent.sh
 ```
 
 ## Add a Compute Environment
-You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/tower/user-guide/configuring_compute_environment) and in the [Seqera help pages](https://help.tower.nf/23.2/compute-envs/overview/). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
+You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-cop-env) and in the [Seqera help pages](https://docs.seqera.io/platform/24.1/compute-envs/overview). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
 ![Workspaces](./images/compute_env_whereto.png) <br>
 {% include callout.html type="note" content="There are a few discrepancies between how Setonix and Gadi are managed, and some additional settings will be required here and there. In addition, version 23.04.3 of Nextflow causes problems on Gadi when the tower.yml file is used to populate reports in the Reports tab (bug)." %}
 ### Name
@@ -158,7 +158,7 @@ If you are a part of the `if89` project and want to use its databases, you need 
 {% include callout.html type="note" content="The memory assigned to the head job may need to be increased in case the pipeline fails with an `out of memory` error when downloading the singularity images of the tools." %}
 
 ## Add a pipeline
-Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://help.tower.nf/23.2/launch/launchpad/). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace. Just click on your user name in the top left corner of the page, select the corresponding workspace, but then navigate to the Launchpad tab.
+Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://docs.seqera.io/platform/24.1/launch/launchpad/). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace. Just click on your user name in the top left corner of the page, select the corresponding workspace, but then navigate to the Launchpad tab.
 ### Name
 Provide a name according to the given instructions.
 ### Compute environment
@@ -194,11 +194,11 @@ singularity {
 It should be pre-populated from the Compute Environment.
 
 ## Check if required databases are provided on your HPC
-Tools in the ONTViSc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/wiki/Installation#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below are instructions for finding the required databases depending on the HPC.
+Tools in the ONTViSc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/tree/v1.3?tab=readme-ov-file#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below are instructions for finding the required databases depending on the HPC.
 #### Gadi
 If access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for your needed databases. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Setonix
-Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage#PawseyFilesystemsandtheirUsage-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://support.pawsey.org.au/documentation/display/US/Pawsey+Filesystems+and+their+Usage) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
+Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://pawsey.atlassian.net/wiki/spaces/US/pages/51925876/Pawsey+Filesystems+and+their+Use#PawseyFilesystemsandtheirUse-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://pawsey.atlassian.net/wiki/x/dFMYAw) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
 #### Lyra
 Check with the [eResearch team](https://www.qut.edu.au/research/eresearch) if Lyra has a shared repository of references. If not, proceed with the installation yourself (below).
 
