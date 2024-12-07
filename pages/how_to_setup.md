@@ -8,7 +8,7 @@ toc: false
 ## Create Personal Access Token
 #### Lyra, Gadi and Setonix (Australian Nextflow Seqera Service)
 You need the authentication token to run Tower Agent (Gadi, Setonix) and monitor the pipeline in the Australian Nextflow Seqera Service (Gadi, Setonix and Lyra). The authentication token can be created in `Your tokens` section of your profile in the Australian Nextflow Seqera Service.<br> 
-![Token](./images/token.png) <br>
+<img alt="Token" src="./images/token.png" width="500"> <br>
 More information on the authentication can be found in the the Australian Nextflow Seqera Service documentation: [Authentication (Seqera)](https://docs.seqera.io/platform/24.1/api/overview#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-access-token).
 
 
