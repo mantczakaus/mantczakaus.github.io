@@ -1,6 +1,6 @@
 subitems:
   - title: About
-    url: /README
+    url: /index
   - title: Before you start
     url: /before_you_start
   - title: How to set up ONTvisc pipeline
