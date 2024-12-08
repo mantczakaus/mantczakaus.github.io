@@ -8,7 +8,7 @@ toc: false
 This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). 
 To successfully execute the ONTViSc pipeline according to this guide, ensure you use the programs with the specified versions as follows:
 - ONTViSc v1.3
-- Nextflow XXX
+- Nextflow 2XXX
 - Seqera Platform v24.1
 
 ## ONTViSc (ONT-based Viral Screening for Biosecurity)
