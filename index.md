@@ -5,11 +5,7 @@ toc: false
 
 
 ## About this guide
-This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). 
-The following versions of the programs were used throughout this guide:
-- ONTViSc v1.3
-- Nextflow 23XXXXXXX
-- Seqera Platform v24.1
+This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). The following versions of the programs were used throughout this guide:
 
 <table border="1">
     <tr>
@@ -23,34 +19,26 @@ The following versions of the programs were used throughout this guide:
         <td colspan="3">v1.3</td>
     </tr>
     <tr>
-        <td>Row 2, Column 1</td>
-        <td>Row 2, Column 2</td>
-        <td>Row 2, Column 3</td>
-        <td>Row 2, Column 4</td>
+        <td>Seqera Platform</td>
+        <td colspan="3">v24.1</td>
     </tr>
     <tr>
-        <td>Row 3, Column 1</td>
-        <td>Row 3, Column 2</td>
-        <td>Row 3, Column 3</td>
-        <td>Row 3, Column 4</td>
+        <td>Singularity</td>
+        <td>3.10.2-1</td>
+        <td>3.11.3</td>
+        <td>4.1.0-slurm</td>
     </tr>
     <tr>
-        <td>Row 4, Column 1</td>
-        <td>Row 4, Column 2</td>
-        <td>Row 4, Column 3</td>
-        <td>Row 4, Column 4</td>
+        <td>Java</td>
+        <td>11.0.15.1</td>
+        <td>jdk-17.0.2</td>
+        <td>openjdk-17.0.8.1_1</td>
     </tr>
     <tr>
-        <td>Row 5, Column 1</td>
-        <td>Row 5, Column 2</td>
-        <td>Row 5, Column 3</td>
-        <td>Row 5, Column 4</td>
-    </tr>
-    <tr>
-        <td>Row 6, Column 1</td>
-        <td>Row 6, Column 2</td>
-        <td>Row 6, Column 3</td>
-        <td>Row 6, Column 4</td>
+        <td>Nextflow</td>
+        <td>24.10.2</td>
+        <td>24.04.1</td>
+        <td>24.04.3</td>
     </tr>
 </table>
 
