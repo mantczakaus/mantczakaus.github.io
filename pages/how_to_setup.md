@@ -14,10 +14,10 @@ More information on the authentication can be found in the the Australian Nextfl
 
 ## Add Credentials for Tower Agent
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
-Tower Agent needs to be run continuously to pick up jobs from the Australian Nextflow Seqera Service, execute them on the HPC, and display the output log live and reports after completion. To run Tower Agent on HPC, you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
-If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled the sharing of the agent. If that is not the case, you will need to create the credentials yourself. Either way, go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not, click Add Credentials.<br> 
+The Tower Agent needs to be run continuously to pick up jobs from the Australian Nextflow Seqera Service, execute them on the HPC, and to display live output logs and reports upon completion. To run Tower Agent on HPC, you first need to create credentials for the Tower Agent. They will be used together with the Personal Access Token you created in the previous step.<br>
+If you are part of an organisational workspace, someone might have already created the Tower Agent credentials and enabled the sharing of the agent. If that is not the case, you will need to create the credentials yourself. Go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not, click Add Credentials.<br> 
 <img alt="Organisation Credentials" src="./images/credentials_org.png"> <br>
-You can also create credentials to work in your personal workspace.<br>
+You can also create credentials in your personal workspace.<br>
 <img alt="Personal Credentials" src="./images/credentials_personal.png"  width="300"> <br>
 {% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you can use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
 More information on adding the credentials can be found in the Australian Nextflow Seqera Service documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent).
@@ -27,23 +27,23 @@ You are only allowed to monitor jobs using the Australian Nextflow Seqera Servic
 
 ## Add Personal Access Token in GitHub
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
-GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (it happens when you execute a pipeline in the Australian Nextflow Seqera Service directly from GitHub repository). You can increase that number when a personal access token is used - we recommend creating one and adding it to the credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+GitHub is very restrictive about the number of times you can make [API requests](https://docs.github.com/en/rest/overview/rate-limits-for-the-rest-api?apiVersion=2022-11-28) (restrictions are applied when you execute a pipeline in the Australian Nextflow Seqera Service directly from GitHub repository). You can increase that number while using a personal access token - we recommend creating one and adding it to the credentials (below). Instructions on how to generate the authentication token can be found in the GitHub documentation: [Managing your personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 {% include callout.html type="note" content="You will need a [GitHub account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account) first." %}
 {% include callout.html type="note" content="Copy/securely store the access token from GitHub. You will need it to use it in the Australian Nextflow Seqera Service in the next step." %}
 
 
 ## Add Credentials for GitHub
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
-Credentials for GitHub are created similarly to credentials for Tower Agent – you also have the option to add them at the organisation or personal level, and you need to navigate to the Credentials tab. However, instead of choosing Tower Agent as a Provider, you will need to choose GitHub. Fill in the rest according to the help text provided under each field.<br> 
+Credentials for GitHub are created similarly to credentials for the Tower Agent – you also have the option to add them at the organisation or personal level, and you need to navigate to the Credentials tab. However, instead of choosing Tower Agent as a Provider, you will need to choose GitHub. Fill in the rest according to the help text provided under each field.<br> 
 <img alt="GitHub Credentials" src="./images/credentials_github.png">
 
 ## Install Nextflow and add default configuration
 #### Gadi
-Nextflow is available as one of the modules on Gadi, so installation is unnecessary. Any required configuration will be provided through the Compute Environment in the Australian Nextflow Seqera Service. 
+Nextflow is available as one of the modules on Gadi, so installation is unnecessary. You will need to provide other required configuration through the Compute Environment in the Australian Nextflow Seqera Service. 
 #### Setonix
-Nextflow is available as one of the modules on Setonix, so installation is unnecessary. Any required configuration will be provided through the Compute Environment in the Australian Nextflow Seqera Service. 
+Nextflow is available as one of the modules on Setonix, so installation is unnecessary. You will need to provide other required configuration through the Compute Environment in the Australian Nextflow Seqera Service. 
 #### Lyra (HPC)
-Follow the following steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):<br>
+Follow the steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):<br>
 1. [Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)<br>
 2. [Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)<br>
 In this step, you must also add a configuration to monitor the pipeline's execution in the Australian Nextflow Seqera Service. Paste the following code:
