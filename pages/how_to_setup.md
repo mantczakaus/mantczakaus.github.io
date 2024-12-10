@@ -8,7 +8,7 @@ toc: false
 ## Create Personal Access Token BLAA
 #### Lyra, Gadi and Setonix (Australian Nextflow Seqera Service)
 You need the authentication token to run Tower Agent (Gadi, Setonix) and monitor the pipeline in the Australian Nextflow Seqera Service (Gadi, Setonix and Lyra). The authentication token can be created in `Your tokens` section of your profile in the Australian Nextflow Seqera Service.<br> 
-<img alt="Token" src="./images/token.png" height="100"> <br>
+<img alt="Token" src="./images/token.png" style="height:50%;> <br>
 More information on the authentication can be found in the the Australian Nextflow Seqera Service documentation: [Authentication (Seqera)](https://docs.seqera.io/platform/24.1/api/overview#authentication) and [Create Personal Token (Australian BioCommons)](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-access-token).
 
 
@@ -16,7 +16,7 @@ More information on the authentication can be found in the the Australian Nextfl
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
 Tower Agent needs to be run continuously to pick up jobs from the Australian Nextflow Seqera Service, execute them on the HPC, and display the output log live and reports after completion. To run Tower Agent on HPC, you first need to create credentials for the Tower Agent. They will be used to launch it together with the Personal Access Token you created in the previous step.<br>
 If you are part of an organisational workspace, someone might have already created Tower Agent credentials and enabled the sharing of the agent. If that is not the case, you will need to create the credentials yourself. Either way, go to the Credentials tab in your organisation's workspace, check if Tower Agent credentials exist already, and if not, click Add Credentials.<br> 
-<img alt="Organisation Credentials" src="./images/credentials_org.png" height="100"> <br>
+<img alt="Organisation Credentials" src="./images/credentials_org.png"> <br>
 You can also create credentials to work in your personal workspace.<br>
 <img alt="Personal Credentials" src="./images/credentials_personal.png" height="100"> <br>
 {% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you can use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
