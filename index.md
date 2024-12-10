@@ -5,11 +5,55 @@ toc: false
 
 
 ## About this guide
-This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). 
-To successfully execute the ONTViSc pipeline according to this guide, ensure you use the programs with the specified versions as follows:
+This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). 
+The following versions of the programs were used throughout this guide:
 - ONTViSc v1.3
 - Nextflow 23XXXXXXX
 - Seqera Platform v24.1
+
+<table border="1">
+    <tr>
+        <th>Program</th>
+        <th>Lyra</th>
+        <th>Gadi</th>
+        <th>Setonix</th>
+    </tr>
+    <tr>
+        <td>ONTViSC</td>
+        <td colspan="3">v1.3</td>
+    </tr>
+    <tr>
+        <td>Row 2, Column 1</td>
+        <td>Row 2, Column 2</td>
+        <td>Row 2, Column 3</td>
+        <td>Row 2, Column 4</td>
+    </tr>
+    <tr>
+        <td>Row 3, Column 1</td>
+        <td>Row 3, Column 2</td>
+        <td>Row 3, Column 3</td>
+        <td>Row 3, Column 4</td>
+    </tr>
+    <tr>
+        <td>Row 4, Column 1</td>
+        <td>Row 4, Column 2</td>
+        <td>Row 4, Column 3</td>
+        <td>Row 4, Column 4</td>
+    </tr>
+    <tr>
+        <td>Row 5, Column 1</td>
+        <td>Row 5, Column 2</td>
+        <td>Row 5, Column 3</td>
+        <td>Row 5, Column 4</td>
+    </tr>
+    <tr>
+        <td>Row 6, Column 1</td>
+        <td>Row 6, Column 2</td>
+        <td>Row 6, Column 3</td>
+        <td>Row 6, Column 4</td>
+    </tr>
+</table>
+
 
 ## ONTViSc (ONT-based Viral Screening for Biosecurity)
 ONTViSc is a Nextflow-based bioinformatics pipeline designed to help diagnostics of viruses and viroid pathogens for biosecurity. It takes fastq files generated from either amplicon or whole-genome sequencing using Oxford Nanopore Technologies as input. The pipeline can either: 1) perform a direct search on the sequenced reads, 2) generate clusters, 3) assemble the reads to generate longer contigs or 4) directly map reads to a known reference. The reads can optionally be filtered from a plant host before performing downstream analysis.
