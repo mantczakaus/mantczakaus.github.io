@@ -46,21 +46,17 @@ Nextflow is available as one of the modules on Setonix, so installation is unnec
 Follow the steps in the [NextFlow quick start guide](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start) created by the [QUT's eResearch Office](https://qutvirtual4.qut.edu.au/group/staff/governance/organisational-structure/academic-division/research-portfolio/research-infrastructure/eresearch):<br>
 1. [Installing Nextflow](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Installing-Nextflow)<br>
 2. [Nextflow’s Default Configuration](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/862028236/NextFlow+quick+start#Nextflow%E2%80%99s-Default-Configuration)<br>
-In this step, you must also add a configuration to monitor the pipeline's execution in the Australian Nextflow Seqera Service. Paste the following code:
+3. To monitor the pipeline's execution in the Australian Nextflow Seqera Service, you need to add the following to the 'config' file. First, prepare your Personal Access Token and workspace ID (found in the `Your organizations` section of your profile in the Australian Nextflow Seqera Service). Then, paste the following code into your Linux command line and hit 'enter':
 ```
+cat <<EOF >> ${HOME}/.nextflow/config
 tower {
   accessToken = <YOUR PERSONAL ACCESS TOKEN>
-  endpoint = 'https://tower.services.biocommons.org.au/api'
   workspaceId = <YOUR WORKSPACE ID>
+  endpoint = 'https://seqera.services.biocommons.org.au/api'
   enabled = true
 }
+EOF
 ```
-after
-```bash
-[[ -d $HOME/.nextflow ]] || mkdir -p $HOME/.nextflow
-cat <<EOF > $HOME/.nextflow/config
-```
-{% include callout.html type="note" content="`workspaceId` can be taken from `Your organizations` section of your profile in the Australian Nextflow Seqera Service." %}
 
 ## Launch Tower Agent
 You need to launch Tower Agent before you add a Compute Environment, as well as to add or execute a pipeline. Even if you use the Australian Nextflow Seqera Service on Setonix or Gadi, this step needs to be done on HPC directly. Luckily, the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory, so create it before executing the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommended to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://docs.seqera.io/platform/24.1/supported_software/agent#quickstart) section of the [Tower Agent help page](https://docs.seqera.io/platform/24.1/supported_software/agent) provided by Seqera). Below are the tips and recommendations for running the Tower Agent on Gadi and Setonix.
