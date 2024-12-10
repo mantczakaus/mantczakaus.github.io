@@ -7,38 +7,38 @@ toc: false
 ## About this guide
 This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). The following versions of the programs were used throughout this guide:
 
-<table border="1">
+<table border="1" style="border-collapse: collapse;">
     <tr>
-        <th>Program</th>
-        <th>Lyra</th>
-        <th>Gadi</th>
-        <th>Setonix</th>
+        <th style="border: 1px solid;">Program</th>
+        <th style="border: 1px solid;">Lyra</th>
+        <th style="border: 1px solid;">Gadi</th>
+        <th style="border: 1px solid;">Setonix</th>
     </tr>
     <tr>
-        <td>ONTViSC</td>
-        <td colspan="3">v1.3</td>
+        <td style="border: 1px solid;">ONTViSC</td>
+        <td style="border: 1px solid;" colspan="3">v1.3</td>
     </tr>
     <tr>
-        <td>Seqera Platform</td>
-        <td colspan="3">v24.1</td>
+        <td style="border: 1px solid;">Seqera Platform</td>
+        <td style="border: 1px solid;" colspan="3">v24.1</td>
     </tr>
     <tr>
-        <td>Singularity</td>
-        <td>3.10.2-1</td>
-        <td>3.11.3</td>
-        <td>4.1.0-slurm</td>
+        <td style="border: 1px solid;">Singularity</td>
+        <td style="border: 1px solid;">3.10.2-1</td>
+        <td style="border: 1px solid;">3.11.3</td>
+        <td style="border: 1px solid;">4.1.0-slurm</td>
     </tr>
     <tr>
-        <td>Java</td>
-        <td>11.0.15.1</td>
-        <td>jdk-17.0.2</td>
-        <td>openjdk-17.0.8.1_1</td>
+        <td style="border: 1px solid;">Java</td>
+        <td style="border: 1px solid;">11.0.15.1</td>
+        <td style="border: 1px solid;">jdk-17.0.2</td>
+        <td style="border: 1px solid;">openjdk-17.0.8.1_1</td>
     </tr>
     <tr>
-        <td>Nextflow</td>
-        <td>24.10.2</td>
-        <td>24.04.1</td>
-        <td>24.04.3</td>
+        <td style="border: 1px solid;">Nextflow</td>
+        <td style="border: 1px solid;">24.10.2</td>
+        <td style="border: 1px solid;">24.04.1</td>
+        <td style="border: 1px solid;">24.04.3</td>
     </tr>
 </table>
 
