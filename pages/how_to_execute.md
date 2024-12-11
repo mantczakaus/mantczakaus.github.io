@@ -7,7 +7,7 @@ toc: false
 
 ## Launch Tower Agent
 #### Gadi and Setonix (HPC)
-You need to start Tower Agent so that it can pick up the pipeline job when you launch it in Nextflow Tower. Follow the instructions in the [How to set up/Launch Tower Agent](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#launch-tower-agent) portion of the guide.
+You need to start Tower Agent so that it can pick up the pipeline job when you launch it in the Australian Nextflow Seqera Service. Follow the instructions in the [How to set up/Launch Tower Agent](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#launch-tower-agent) portion of the guide.
 
 ## Create a folder to which you will direct the execution of the pipeline
 #### Gadi and Setonix (HPC)
@@ -16,7 +16,7 @@ You had to specify the `Work directory` (and optionally, the `Launch directory`)
 Create folders where all the task work directories will be created (`Work directory`), and all the execution scripts, config files and logs will be stored (`Launch directory`). More information in the [How to set up/Add a Compute Environment](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#add-a-compute-environment) portion of the guide.
 
 ## Launch the pipeline with the `test` configuration
-#### Gadi and Setonix (Nextflow Tower)
+#### Gadi and Setonix (Australian Nextflow Seqera Service)
 In the Launchpad, select the ONTViSc pipeline you added in the [How to set up/Add a pipeline](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#add-a-pipeline) portion of the guide and click `Launch`. You need to modify two fields before you click `Launch`.
 ##### Config profiles
 Add the profile `test` in addition to `singularity`.
@@ -50,9 +50,9 @@ EOF
 Submit the script to the PBS scheduler by executing the command `qsub submit_test.sh`.
 
 ## Monitoring
-### Nextflow Tower
+### Australian Nextflow Seqera Service
 #### Gadi, Setonix and Lyra
-Tips on monitoring in the [Seqera's guide for Nextflow Tower](https://docs.seqera.io/platform/24.1/monitoring/overview/)
+Tips on monitoring in the [Seqera's guide for the Australian Nextflow Seqera Service](https://docs.seqera.io/platform/24.1/monitoring/overview/)
 ### HPC
 #### Gadi and Lyra
 Execute the `qstat -u <user-name>` to see the pipeline's progress.
@@ -60,18 +60,18 @@ Execute the `qstat -u <user-name>` to see the pipeline's progress.
 Execute the `squeue -u <user-name>` to see the pipeline's progress.
 
 ## Relaunching and resuming
-#### Gadi and Setonix (Nextflow Tower)
-Tips on relaunching and resuming the pipeline in the [Seqera's guide for Nextflow Tower](https://docs.seqera.io/platform/24.1/launch/launchpad/#relaunch-pipeline-run)
+#### Gadi and Setonix (Australian Nextflow Seqera Service)
+Tips on relaunching and resuming the pipeline in the [Seqera's guide for the Australian Nextflow Seqera Service](https://docs.seqera.io/platform/24.1/launch/launchpad/#relaunch-pipeline-run)
 ### Lyra (HPC)
 If you need to relaunch the pipeline, re-submit the script. Tips on resuming can be found in the two blog posts from Nextflow: [Troubleshooting Nextflow resume](https://seqera.io/blog/troubleshooting-nextflow-resume.html) and [Demystifying Nextflow resume](https://seqera.io/blog/demystifying-nextflow-resume.html).
 
 ## Results
-The ONTViSc pipeline with the `test` configuration performs de novo assembly of the reads with Canu and compares the assembled contigs to a reference. If the pipeline is completed successfully, you should see the output files on HPC (and Nextflow Tower in the case of Gadi and Setonix).
+The ONTViSc pipeline with the `test` configuration performs de novo assembly of the reads with Canu and compares the assembled contigs to a reference. If the pipeline is completed successfully, you should see the output files on HPC (and the Australian Nextflow Seqera Service in the case of Gadi and Setonix).
 ### HPC
 #### Gadi, Setonix and Lyra
 Follow the [Output files/De novo assembly mode](https://github.com/eresearchqut/ONTViSc/tree/v1.3?tab=readme-ov-file#de-novo-assembly-mode-outputs) section of the ONTViSc pipeline's wiki page to check what output should be expected.
 
-### Nextflow Tower
+### Australian Nextflow Seqera Service
 #### Gadi and Setonix
 Three reports should be generated.
 ![Reports](.images/reports.png)
