@@ -7,17 +7,17 @@ toc: false
 
 ## Launch Tower Agent
 #### Gadi and Setonix (HPC)
-You need to start Tower Agent so that it can pick up the pipeline job when you launch it in the Australian Nextflow Seqera Service. Follow the instructions in the [How to set up/Launch Tower Agent](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#launch-tower-agent) portion of the guide.
+You need to start Tower Agent so that it can pick up the pipeline job when you launch it in the Australian Nextflow Seqera Service. Follow the instructions in the [How to set up/Launch Tower Agent](https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/how_to_setup#launch-tower-agent) section of the guide.
 
 ## Create a folder to which you will direct the execution of the pipeline
 #### Gadi and Setonix (HPC)
-You had to specify the `Work directory` (and optionally, the `Launch directory`) when you were [adding the Compute Environment](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#add-a-compute-environment). Make sure these folders exist on the HPC. 
+You had to specify the `Work directory` (and optionally, the `Launch directory`) when you were [adding the Compute Environment](https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/how_to_setup#add-a-compute-environment). Make sure these folders exist on the HPC. 
 #### Lyra (HPC)
-Create folders where all the task work directories will be created (`Work directory`), and all the execution scripts, config files and logs will be stored (`Launch directory`). More information in the [How to set up/Add a Compute Environment](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#add-a-compute-environment) portion of the guide.
+Create folders where all the task work directories will be placed (`Work directory`), and where all the execution scripts, config files, and logs will be stored (`Launch directory`). More information in the [How to set up/Add a Compute Environment](https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/how_to_setup#add-a-compute-environment) section of the guide.
 
 ## Launch the pipeline with the `test` configuration
 #### Gadi and Setonix (Australian Nextflow Seqera Service)
-In the Launchpad, select the ONTViSc pipeline you added in the [How to set up/Add a pipeline](https://mantczakaus.github.io/ONTViSc_guide/how_to_setup#add-a-pipeline) portion of the guide and click `Launch`. You need to modify two fields before you click `Launch`.
+In the Launchpad, select the ONTViSc pipeline you added in the [How to set up/Add a pipeline](https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/how_to_setup#add-a-pipeline) section of the guide and click `Launch`. You need to modify two fields before you click `Launch`.
 ##### Config profiles
 Add the profile `test` in addition to `singularity`.
 ##### Pipeline parameters
