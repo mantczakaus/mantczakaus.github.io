@@ -20,7 +20,8 @@ If you are part of an organisational workspace, someone might have already creat
 You can also create credentials in your personal workspace.<br>
 <img alt="Personal Credentials" src="./images/credentials_personal.png"  width="300"> <br>
 {% include callout.html type="note" content="When you add credentials for Tower Agent from your personal workspace, you can use it only for executing pipelines from your personal workspace launchpad. Similarly, credentials in your organisation workspace apply to pipelines from the organisation workspace." %}
-More information on adding the credentials can be found in the Australian Nextflow Seqera Service documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent).
+More information on adding the credentials can be found in the Australian Nextflow Seqera Service documentation from Australian BioCommons: [Create Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent). 
+{% include callout.html type="note" content="Copy the command from the `Usage` section. You will need it to launch the Tower Agent in a later step." %}
 #### Lyra
 You are only allowed to monitor jobs using the Australian Nextflow Seqera Service on Lyra, which does not require running the Tower Agent.
 
@@ -59,7 +60,7 @@ EOF
 ```
 
 ## Launch Tower Agent
-You need to launch Tower Agent before you add a Compute Environment, as well as to add or execute a pipeline. Even if you use the Australian Nextflow Seqera Service on Setonix or Gadi, this step needs to be done on HPC directly. Luckily, the instructions on how to launch the Tower Agent are provided to you when you [create the Tower Agent credentials](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-tower-agent). The section `Usage` includes a command that you need to copy, modify with your security access token and execute on the HPC. Tower Agent will populate files in the `work` directory, so create it before executing the command from the `Usage` section. The Tower Agent will stop running when you close the ssh session. Thus, it is recommended to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://docs.seqera.io/platform/24.1/supported_software/agent#quickstart) section of the [Tower Agent help page](https://docs.seqera.io/platform/24.1/supported_software/agent) provided by Seqera). Below are the tips and recommendations for running the Tower Agent on Gadi and Setonix.
+You need to launch Tower Agent before you add a Compute Environment, as well as to add or execute a pipeline. Even if you use the Australian Nextflow Seqera Service on Setonix or Gadi, this step needs to be done on HPC directly. Modify the command you copied from the `Usage` section when you created the Tower Agent credentials by populating it with your security access token. Then, execute it on the HPC. Tower Agent will populate files in the `work` directory, so create it before executing the command. The Tower Agent will stop running when you close the ssh session and thus, it is recommended to use a terminal multiplexer like tmux or submit a job with the running agent to the scheduler (more information in the [Quickstart](https://docs.seqera.io/platform/24.1/supported_software/agent#quickstart) section of the Tower Agent help page provided by Seqera). Below the tips and recommendations for running the Tower Agent on Gadi and Setonix.
 
 #### Gadi (HPC)
 Start a persistent session
