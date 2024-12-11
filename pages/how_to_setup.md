@@ -73,7 +73,7 @@ ssh <session-name>.<user-name>.<project-id>.ps.gadi.nci.org.au
 ```
 [Start a tmux session](https://tmuxcheatsheet.com/) and then launch the Tower Agent by using the command provided to you when you created the Tower Agent credentials.
 #### Setonix (HPC)
-Neither `tmux` nor `screen` is available on Setonix, so submitting a job to Slurm is recommended to keep the Tower Agent running for a certain period. The following command creates a Slurm script with directives required to run Tower Agent on Setonix. Copy the following command, replace the instructions provided to you when you created the Tower Agent credentials, and then execute the command in your terminal.
+Both `tmux` and `screen` are available on Setonix, so you can launch the Tower Agent like you would on Gadi. Alternatively, you can also submit a job to Slurm that will keep the Tower Agent running for a certain period of time. The following command creates a Slurm script with directives required to run Tower Agent on Setonix. Copy the command, replace the instructions provided to you when you created the Tower Agent credentials, and then submit it to Slurm.
 ```bash
 cat <<EOF > run_toweragent.sh
 #!/bin/bash -l
@@ -89,7 +89,7 @@ cd ~
 <INSTRUCTIONS PROVIDED TO YOU WHEN YOU CREATED THE TOWER AGENT CREDENTIALS>
 EOF
 ```
-Once the `run_toweragent.sh` file is created, submit it to Slurm by running
+Once the `run_toweragent.sh` file is created, submit it to Slurm by executing the following command in your command line
 ```bash
 sbatch run_toweragent.sh
 ```
@@ -97,7 +97,7 @@ sbatch run_toweragent.sh
 ## Add a Compute Environment
 You are now ready to create a Compute Environment. Some general tips and instructions on how to add compute environments can be found in the [Australian BioCommons documentation](https://australianbiocommons.github.io/nextflow-seqera/user-guide/compute-env#heading-cop-env) and in the [Seqera help pages](https://docs.seqera.io/platform/24.1/compute-envs/overview). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. You can create a compute environment in your personal or organisational workspace. To do that, click on your user name in the top left corner of the page, select the corresponding workspace and then navigate to the Compute Environments tab.<br>
 <img alt="Workspaces" src="./images/compute_env_whereto.png"> <br>
-{% include callout.html type="note" content="There are a few discrepancies between how Setonix and Gadi are managed, and some additional settings will be required here and there. In addition, version 23.04.3 of Nextflow causes problems on Gadi when the tower.yml file is used to populate reports in the Reports tab (bug)." %}
+{% include callout.html type="note" content="There are a few discrepancies between how Setonix and Gadi are managed, and some additional settings will be required here and there." %}
 ### Name
 Provide a name according to the given instructions.
 ### Platform
@@ -110,7 +110,7 @@ Provide a name according to the given instructions.
 Select the Tower Agent credentials you created in one of the previous steps.
 ### Work directory
 #### Gadi and Setonix
-Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when the pipeline is created and executed.
+Specify a directory where all the task work directories will be created (more information on the work directory in the [Nextflow documentation](https://www.nextflow.io/docs/latest/cache-and-resume.html#work-directory) and [Nextflow basic training](https://training.nextflow.io/basic_training/cache_and_resume/#work-directory)). This can be overwritten later when the pipeline is being created and executed.
 ### Launch directory
 #### Gadi and Setonix
 After the pipeline is launched from Australian Nextflow Seqera Service, a script submission to the scheduler will be created and submitted on your behalf on the HPC. The `Launch directory` will store all those scripts, configuration files and logs. You can specify it or leave it empty (it will be populated with `Work directory` in the latter case).
@@ -127,13 +127,13 @@ Leave empty.
 ### Staging options: Pre-run script
 #### Gadi
 ```
-module load nextflow/22.04.3
+module load nextflow/24.04.1
 module load singularity
 ```
 #### Setonix
 ```
-module load nextflow/23.04.3
-module load singularity/3.11.4-slurm
+module load nextflow/24.04.3
+module load singularity/4.1.0-slurm
 ```
 ### Environment variables
 #### Gadi and Setonix
@@ -155,7 +155,7 @@ If you are a part of the `if89` project and want to use its databases, you need 
 {% include callout.html type="note" content="The memory assigned to the head job may need to be increased in case the pipeline fails with an `out of memory` error when downloading the singularity images of the tools." %}
 
 ## Add a pipeline
-Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://docs.seqera.io/platform/24.1/launch/launchpad/). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace. Just click on your user name in the top left corner of the page, select the corresponding workspace, but then navigate to the Launchpad tab.
+Some general tips and instructions on how to add a pipeline can be found in the [Seqera help pages](https://docs.seqera.io/platform/24.1/launch/launchpad/). Below are instructions on what to fill in the specific fields to run the ONTViSc pipeline on Gadi and Setonix. Similarly to compute environments, you can add a workflow in your personal or organisation workspace. Just click on your user name in the top left corner of the page, select the corresponding workspace, and then navigate to the Launchpad tab.
 ### Name
 Provide a name according to the given instructions.
 ### Compute environment
