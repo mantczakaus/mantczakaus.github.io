@@ -1,11 +1,13 @@
 subitems:
-  - title: About
+  - title: About this guide
     url: /index
   - title: Before you start
     url: /before_you_start
   - title: How to set up ONTvisc pipeline
     url: /how_to_setup
-  - title: How to execute ONTvisc pipeline
+  - title: How to execute ONTvisc pipeline with test data and configuration
     url: /how_to_execute
+  - title: How to set up databases for different modes
+    url: /databases
   - title: Contributors
     url: /contributors
