@@ -12,9 +12,8 @@ ONTViSc is a Nextflow-based bioinformatics pipeline designed to help diagnostics
 ![Pipeline](./images/ONTViSc_pipeline.png)
 
 ## Acknowledgements
+This work is supported by [Australian BioCommons](https://www.biocommons.org.au/) via funding from [Bioplatforms Australia](https://bioplatforms.com/) and the Queensland Government Research Infrastructure Co-investment Fund (RICF) programme. Bioplatforms Australia is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).
 
-This work is supported by Australian BioCommons via funding from Bioplatforms Australia and the Queensland Government Research Infrastructure Co-investment Fund (RICF) programme. Bioplatforms Australia is funded by the National Collaborative Research Infrastructure Strategy (NCRIS).
-
-This guide makes use of the ELIXIR toolkit theme
+This guide makes use of the [ELIXIR toolkit theme](https://github.com/ELIXIR-Belgium/elixir-toolkit-theme)
 
 {% include image.html file="elixir-toolkit-theme_logo.svg" alt="Elixir Toolkit Theme logo" max-width="15em" %}
