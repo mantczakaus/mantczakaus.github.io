@@ -80,5 +80,5 @@ Follow the [Output files/De novo assembly mode](https://github.com/eresearchqut/
 
 ### Australian Nextflow Seqera Service
 #### Gadi and Setonix
-Three reports should be generated.
-![Reports](.images/reports.png)
+Four reports should be generated in this version of the ONTViSc pipeline.
+<img alt="Reports" src="./images/reports.png">
