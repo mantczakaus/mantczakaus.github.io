@@ -1,9 +1,7 @@
 ---
-title: How to execute ONTViSc pipeline
+title: How to execute ONTViSc pipeline with test data and configuration
 toc: false
 ---
-
-
 
 ## Launch Tower Agent
 #### Gadi and Setonix (HPC)
