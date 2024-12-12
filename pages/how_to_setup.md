@@ -189,12 +189,3 @@ singularity {
 ```
 ### Advanced options: Pre-run script 
 It should be pre-populated from the Compute Environment.
-
-## Check if required databases are provided on your HPC
-Tools in the ONTViSc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/tree/v1.3?tab=readme-ov-file#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below are instructions for finding the required databases depending on the HPC.
-#### Gadi
-If access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for your needed databases. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
-#### Setonix
-Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://pawsey.atlassian.net/wiki/spaces/US/pages/51925876/Pawsey+Filesystems+and+their+Use#PawseyFilesystemsandtheirUse-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://pawsey.atlassian.net/wiki/x/dFMYAw) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
-#### Lyra
-Check with the [eResearch team](https://www.qut.edu.au/research/eresearch) if Lyra has a shared repository of references. If not, proceed with the installation yourself (below).
