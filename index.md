@@ -1,47 +1,11 @@
 ---
-title: How to set up and execute ONTViSc pipeline on HPC
+title: ONTViSc pipeline on HPC using Australian Nextflow Seqera Service
 toc: false
 ---
 
 
 ## About this guide
-This is a guide outlining how to set up and execute [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three Australian high-performance computing systems: [Lyra (QUT)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (NCI)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). The following versions of the programs were used throughout this guide:
-
-<table border="1" style="border-collapse: collapse;">
-    <tr>
-        <th style="border: 1px solid;">Program</th>
-        <th style="border: 1px solid;">Lyra</th>
-        <th style="border: 1px solid;">Gadi</th>
-        <th style="border: 1px solid;">Setonix</th>
-    </tr>
-    <tr>
-        <td style="border: 1px solid;">ONTViSC</td>
-        <td style="border: 1px solid;" colspan="3">v1.3</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid;">Seqera Platform</td>
-        <td style="border: 1px solid;" colspan="3">v24.1</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid;">Singularity</td>
-        <td style="border: 1px solid;">3.10.2-1</td>
-        <td style="border: 1px solid;">3.11.3</td>
-        <td style="border: 1px solid;">4.1.0-slurm</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid;">Java</td>
-        <td style="border: 1px solid;">11.0.15.1</td>
-        <td style="border: 1px solid;">jdk-17.0.2</td>
-        <td style="border: 1px solid;">openjdk-17.0.8.1_1</td>
-    </tr>
-    <tr>
-        <td style="border: 1px solid;">Nextflow</td>
-        <td style="border: 1px solid;">24.10.2</td>
-        <td style="border: 1px solid;">24.04.1</td>
-        <td style="border: 1px solid;">24.04.3</td>
-    </tr>
-</table>
-
+This is a guide outlining how to set up and execute [the ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc) on three high-performance computing systems hosted by Australian research and computing facilities: [Lyra (Queensland University of Technology)](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC), [Gadi (National Computational Infrastructure)](https://opus.nci.org.au/display/Help/Gadi+User+Guide) and [Setonix (Pawsey)](https://support.pawsey.org.au/documentation/display/US/Setonix+User+Guide). Throughout this guide we will make use of the Australian Nextflow Seqera Service provided to the researchers by [Australian BioCommons](https://www.biocommons.org.au/). 
 
 ## ONTViSc (ONT-based Viral Screening for Biosecurity)
 ONTViSc is a Nextflow-based bioinformatics pipeline designed to help diagnostics of viruses and viroid pathogens for biosecurity. It takes fastq files generated from either amplicon or whole-genome sequencing using Oxford Nanopore Technologies as input. The pipeline can either: 1) perform a direct search on the sequenced reads, 2) generate clusters, 3) assemble the reads to generate longer contigs or 4) directly map reads to a known reference. The reads can optionally be filtered from a plant host before performing downstream analysis.
