@@ -40,7 +40,6 @@ cat <<EOF > submit_test.sh
 #PBS -e <PATH TO THE ERROR FILE>
 #PBS -o <PATH TO THE LOG FILE>
 
-cd $PBS_O_WORKDIR
 module load java
 NXF_OPTS='-Xms1g -Xmx4g'
 
