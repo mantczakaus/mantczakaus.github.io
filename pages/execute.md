@@ -28,7 +28,7 @@ When a `test` configuration is used, you do not need to specify any parameters. 
 outdir: <PATH WHERE YOU WANT THE RESULTS TO BE STORED>
 ```
 <br>
-<img alt="Launch_pipeline" src="./images/launch_pipeline.png" width="400">
+<img alt="Launch_pipeline" src="./images/launch_pipeline.png" width="600">
 <br>
 {% include callout.html type="note" content="Pipeline parameters can be parsed in the JSON or YAML format. The `outdir` above is parsed in the YAML format. Examples can be found in the [CLI/run/Examples](https://www.nextflow.io/docs/latest/cli.html#run) section of the Nextflow guide." %}
 #### Lyra (HPC)
@@ -45,7 +45,10 @@ cat <<EOF > submit_test.sh
 module load java
 NXF_OPTS='-Xms1g -Xmx4g'
 
+cd \$PBS_O_WORKDIR
+
 nextflow run eresearchqut/ONTViSc \
+	-r v1.3 \
 	-profile singularity,test \
 	--outdir <PATH WHERE YOU WANT THE RESULTS TO BE STORED>
 
