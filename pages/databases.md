@@ -12,7 +12,7 @@ If access to Gadi was granted to you through the [ABLeS initiative](https://www.
 #### Setonix
 Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://pawsey.atlassian.net/wiki/spaces/US/pages/51925876/Pawsey+Filesystems+and+their+Use#PawseyFilesystemsandtheirUse-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://pawsey.atlassian.net/wiki/x/dFMYAw) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add them to the shared folder. If not, proceed with the installation yourself using the instructions below.
 #### Lyra
-Check with the [eResearch team](https://www.qut.edu.au/research/eresearch) if Lyra has a shared repository of references. If not, proceed with the installation yourself (below).
+Check if the databases you require are available in the folder `/scratch/datasets`. If they are not provided there, check with the [eResearch team](https://www.qut.edu.au/research/eresearch) to see if they can add them to the shared folder or if there is another shared repository for references. If not, proceed with the installation yourself using the instructions below.
 
 ## Download databases if they are not provided
 ### BLAST nucleotide sequence database (NT)
