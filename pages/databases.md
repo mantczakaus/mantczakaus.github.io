@@ -1,23 +1,22 @@
 ---
-title: Databases
+title:Beyond test data and configuration
 toc: false
 ---
 
-## Beyond test configuration
 Other usage examples can be found on the [Running the pipeline](https://github.com/eresearchqut/ONTViSc/tree/v1.3?tab=readme-ov-file#running-the-pipeline) section of the ONTViSc pipeline's guide. The examples include Nextflow commands with the required parameters for each mode, e.g. [Read classification analysis mode](https://github.com/eresearchqut/ONTViSc/tree/v1.3?tab=readme-ov-file#read-classification-analysis-mode).
 
 ## Check if required databases are provided on your HPC
-Tools in the ONTViSc pipeline compare the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required to be provided depending on the selected mode and tips on how to install them can be found in the pipeline's wiki page in the <a href="https://github.com/eresearchqut/ontvisc/tree/v1.3?tab=readme-ov-file#installing-the-required-indexes-and-references"> Installing the required indexes and references </a> section. Below are instructions for finding the required databases depending on the HPC.
+Tools in the ONTViSc pipeline search/align the reads/clusters/contigs (depending on the mode) to a database or a reference. The explanation of which databases are required based on the selected mode, along with tips on how to install them, can be found in the section of the guide entitled <a href="https://github.com/eresearchqut/ontvisc/tree/v1.3?tab=readme-ov-file#installing-the-required-indexes-and-references"> Installing the required indexes and references </a>. Below are instructions for installing the necessary databases depending on the HPC.
 #### Gadi
-If access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/), in project allocation if89. However, you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89). Check the folder `/g/data/if89/data_library` for your needed databases. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
+If access to Gadi was granted to you through the [ABLeS initiative](https://www.biocommons.org.au/ables), you have access to the [Australian BioCommons shared repository of tools and software](https://australianbiocommons.github.io/ables/if89/) under the project allocation if89 (you need to [join the if89 first](https://my.nci.org.au/mancini/project/if89)). Check the `/g/data/if89/data_library` folder for your needed databases. If they are not provided there, [contact the ABLeS team](https://australianbiocommons.github.io/ables/contact-us/) first to see if they can add them to the shared folder. If not, proceed with the installation yourself using the instructions below.
 #### Setonix
-Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://pawsey.atlassian.net/wiki/spaces/US/pages/51925876/Pawsey+Filesystems+and+their+Use#PawseyFilesystemsandtheirUse-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://pawsey.atlassian.net/wiki/x/dFMYAw) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add it to the shared folder. If not, proceed with the installation yourself (below).
+Check if the databases you require are available in the folder `/scratch/references` (more details in the [Reference datasets](https://pawsey.atlassian.net/wiki/spaces/US/pages/51925876/Pawsey+Filesystems+and+their+Use#PawseyFilesystemsandtheirUse-Referencedatasets) section of the [Pawsey Filesystems and their Usage](https://pawsey.atlassian.net/wiki/x/dFMYAw) document). If they are not provided there, [contact Pawsey helpdesk](help@pawsey.org.au) first to see if they can add them to the shared folder. If not, proceed with the installation yourself using the instructions below.
 #### Lyra
 Check with the [eResearch team](https://www.qut.edu.au/research/eresearch) if Lyra has a shared repository of references. If not, proceed with the installation yourself (below).
 
 ## Download databases if they are not provided
 ### BLAST nucleotide sequence database (NT)
-The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl, which will download and decompress all the necessary latest components of the NT database.  
+The following command will create a script ```download_blastdb.sh``` that downloads a perl script update_blastdb.pl, which will download and decompress all the necessary latest components of the NT database. The scheduler directives will depend on your HPC (see instructions below).  After creating the script `download_blastdb.sh`, you will need to submit it to the scheduler. The command will also depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
 {% include callout.html type="note" content="Make sure to create a folder where you will store the database first and then change the paths before you execute the command." %}
 ```bash
 cat <<EOF > download_blastdb.sh
@@ -32,7 +31,7 @@ perl update_blastdb.pl taxdb
 tar -xzf taxdb.tar.gz
 EOF
 ```
-After creating the script `download_blastdb.sh`, submit it to the scheduler. The command will depend on the scheduler the HPC uses - refer to the section below to find the appropriate command.
+
 #### Gadi
 ##### Directives specific to PBS on Gadi
 ```bash
