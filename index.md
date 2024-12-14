@@ -16,26 +16,26 @@ ONTViSc is a Nextflow-based bioinformatics pipeline designed to help diagnostics
 ## References
 [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc)
 ### Databases and tools
-[NCBI NT](https://www.ncbi.nlm.nih.gov/nucleotide/)
-[Kraken2-compatile pre-built index](https://benlangmead.github.io/aws-indexes/k2)
-[Kaiju-compatible pre-built index](https://bioinformatics-centre.github.io/kaiju/downloads.html)
-[Viral database (QUT)](https://zenodo.org/records/10183620)
-[Canu publication](https://genome.cshlp.org/content/27/5/722)
+[NCBI NT](https://www.ncbi.nlm.nih.gov/nucleotide/)<br>
+[Kraken2-compatile pre-built index](https://benlangmead.github.io/aws-indexes/k2)<br>
+[Kaiju-compatible pre-built index](https://bioinformatics-centre.github.io/kaiju/downloads.html)<br>
+[Viral database (QUT)](https://zenodo.org/records/10183620)<br>
+[Canu publication](https://genome.cshlp.org/content/27/5/722)<br>
 [Canu documentation](https://canu.readthedocs.io/en/latest/index.html)
 ### NCI
 [Gadi User Guide/User Account and Project Memberships](https://opus.nci.org.au/display/Help/1.0+User+Account+and+Project+Memberships)
 ### Pawsey
 [Requesting Access to Pawsey Supercomputers](https://support.pawsey.org.au/documentation/display/US/Requesting+Access+to+Pawsey+Supercomputers)
 ### Australian BioCommons
-[The Australian BioCommons Leadership Share (ABLeS)](https://australianbiocommons.github.io/ables/index)
-[The Australian Nextflow Seqera Service](https://www.biocommons.org.au/seqera-service)
+[The Australian BioCommons Leadership Share (ABLeS)](https://australianbiocommons.github.io/ables/index)<br>
+[The Australian Nextflow Seqera Service](https://www.biocommons.org.au/seqera-service)<br>
 [User Guide for the Australian Nextflow Seqera Service](https://australianbiocommons.github.io/nextflow-seqera/user-guide/)
 ### QUT
-[Start using the HPC](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC)
+[Start using the HPC](https://eresearchqut.atlassian.net/wiki/spaces/EG/pages/1545143157/Start+using+the+HPC)<br>
 [eResearch team](https://www.qut.edu.au/research/eresearch)
 ### Seqera
-[User guide for the Seqera Platform, v24.1](https://docs.seqera.io/platform/24.1)
-[Nextflow documentation](https://www.nextflow.io/docs/latest/index.html)
+[User guide for the Seqera Platform, v24.1](https://docs.seqera.io/platform/24.1)<br>
+[Nextflow documentation](https://www.nextflow.io/docs/latest/index.html)<br>
 [Nextflow training](https://training.nextflow.io/)
 
 ## Acknowledgements
