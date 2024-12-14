@@ -12,6 +12,7 @@ ONTViSc is a Nextflow-based bioinformatics pipeline designed to help diagnostics
 ![Pipeline](./images/ONTViSc_pipeline.png)
 
 ## Please cite this guide as follows
+Antczak, M., Gauthier, M., & Capon, P. (2024). ONTViSc pipeline on HPC using Australian Nextflow Seqera Service (Version 1.0) [Computer software]. https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/
 
 ## References
 [ONTViSc pipeline](https://github.com/eresearchqut/ONTViSc)
