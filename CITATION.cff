@@ -12,5 +12,5 @@ authors:
     orcid: https://orcid.org/0000-0002-7396-5757
 title: "ONTViSc pipeline on HPC using Australian Nextflow Seqera Service"
 version: 1.0
-doi: https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/
+url: https://mantczakaus.github.io/ontvisc_hpc_seqera_service_guide/
 date-released: 2024-12-14
